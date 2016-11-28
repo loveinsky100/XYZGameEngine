@@ -14,6 +14,21 @@
 		B3EE12671DEC1BE4009A4A32 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3EE12661DEC1BE4009A4A32 /* Assets.xcassets */; };
 		B3EE126A1DEC1BE4009A4A32 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3EE12681DEC1BE4009A4A32 /* LaunchScreen.storyboard */; };
 		B3EE12751DEC1BE4009A4A32 /* XYZGameEngineTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B3EE12741DEC1BE4009A4A32 /* XYZGameEngineTests.m */; };
+		B3EE12881DEC1F45009A4A32 /* GLESProgram.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3EE12861DEC1F45009A4A32 /* GLESProgram.cpp */; };
+		B3EE12F51DEC54DC009A4A32 /* GLESTexture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3EE12F31DEC54DC009A4A32 /* GLESTexture.cpp */; };
+		B3EE12FC1DEC557D009A4A32 /* TextureShader.frag in Resources */ = {isa = PBXBuildFile; fileRef = B3EE12FA1DEC557D009A4A32 /* TextureShader.frag */; };
+		B3EE12FD1DEC557D009A4A32 /* TextureShader.vert in Resources */ = {isa = PBXBuildFile; fileRef = B3EE12FB1DEC557D009A4A32 /* TextureShader.vert */; };
+		B3EE130B1DEC59BE009A4A32 /* XYZGameEngineView.mm in Sources */ = {isa = PBXBuildFile; fileRef = B3EE130A1DEC59BE009A4A32 /* XYZGameEngineView.mm */; };
+		B3EE13111DEC5C36009A4A32 /* GLESBuffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3EE130F1DEC5C36009A4A32 /* GLESBuffer.cpp */; };
+		B3EE132A1DEC64F8009A4A32 /* Frame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3EE131D1DEC64F8009A4A32 /* Frame.cpp */; };
+		B3EE132B1DEC64F8009A4A32 /* GameObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3EE13201DEC64F8009A4A32 /* GameObject.cpp */; };
+		B3EE132E1DEC64F8009A4A32 /* Scene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3EE13281DEC64F8009A4A32 /* Scene.cpp */; };
+		B3EE13361DEC7172009A4A32 /* CubeMesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3EE13321DEC7172009A4A32 /* CubeMesh.cpp */; };
+		B3EE13371DEC7172009A4A32 /* Mesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3EE13341DEC7172009A4A32 /* Mesh.cpp */; };
+		B3EE133A1DEC7183009A4A32 /* Conponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3EE13381DEC7183009A4A32 /* Conponent.cpp */; };
+		B3EE13451DEC7414009A4A32 /* Object.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3EE13401DEC7414009A4A32 /* Object.cpp */; };
+		B3EE13461DEC7414009A4A32 /* ReleasePool.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3EE13431DEC7414009A4A32 /* ReleasePool.cpp */; };
+		B3EE13491DEC743A009A4A32 /* Array.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3EE13471DEC743A009A4A32 /* Array.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +55,36 @@
 		B3EE12701DEC1BE4009A4A32 /* XYZGameEngineTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XYZGameEngineTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3EE12741DEC1BE4009A4A32 /* XYZGameEngineTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYZGameEngineTests.m; sourceTree = "<group>"; };
 		B3EE12761DEC1BE4009A4A32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B3EE12861DEC1F45009A4A32 /* GLESProgram.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GLESProgram.cpp; sourceTree = "<group>"; };
+		B3EE12871DEC1F45009A4A32 /* GLESProgram.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = GLESProgram.hpp; sourceTree = "<group>"; };
+		B3EE128D1DEC21E9009A4A32 /* Locker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Locker.h; sourceTree = "<group>"; };
+		B3EE12F31DEC54DC009A4A32 /* GLESTexture.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GLESTexture.cpp; sourceTree = "<group>"; };
+		B3EE12F41DEC54DC009A4A32 /* GLESTexture.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = GLESTexture.hpp; sourceTree = "<group>"; };
+		B3EE12F81DEC5559009A4A32 /* GLESShader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLESShader.h; sourceTree = "<group>"; };
+		B3EE12FA1DEC557D009A4A32 /* TextureShader.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = TextureShader.frag; sourceTree = "<group>"; };
+		B3EE12FB1DEC557D009A4A32 /* TextureShader.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = TextureShader.vert; sourceTree = "<group>"; };
+		B3EE13091DEC59BE009A4A32 /* XYZGameEngineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYZGameEngineView.h; sourceTree = "<group>"; };
+		B3EE130A1DEC59BE009A4A32 /* XYZGameEngineView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = XYZGameEngineView.mm; sourceTree = "<group>"; };
+		B3EE130F1DEC5C36009A4A32 /* GLESBuffer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GLESBuffer.cpp; sourceTree = "<group>"; };
+		B3EE13101DEC5C36009A4A32 /* GLESBuffer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = GLESBuffer.hpp; sourceTree = "<group>"; };
+		B3EE131D1DEC64F8009A4A32 /* Frame.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Frame.cpp; sourceTree = "<group>"; };
+		B3EE131E1DEC64F8009A4A32 /* Frame.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Frame.hpp; sourceTree = "<group>"; };
+		B3EE13201DEC64F8009A4A32 /* GameObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameObject.cpp; sourceTree = "<group>"; };
+		B3EE13211DEC64F8009A4A32 /* GameObject.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = GameObject.hpp; sourceTree = "<group>"; };
+		B3EE13281DEC64F8009A4A32 /* Scene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Scene.cpp; sourceTree = "<group>"; };
+		B3EE13291DEC64F8009A4A32 /* Scene.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Scene.hpp; sourceTree = "<group>"; };
+		B3EE13321DEC7172009A4A32 /* CubeMesh.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CubeMesh.cpp; sourceTree = "<group>"; };
+		B3EE13331DEC7172009A4A32 /* CubeMesh.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CubeMesh.hpp; sourceTree = "<group>"; };
+		B3EE13341DEC7172009A4A32 /* Mesh.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Mesh.cpp; sourceTree = "<group>"; };
+		B3EE13351DEC7172009A4A32 /* Mesh.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Mesh.hpp; sourceTree = "<group>"; };
+		B3EE13381DEC7183009A4A32 /* Conponent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Conponent.cpp; sourceTree = "<group>"; };
+		B3EE13391DEC7183009A4A32 /* Conponent.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Conponent.hpp; sourceTree = "<group>"; };
+		B3EE13401DEC7414009A4A32 /* Object.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Object.cpp; sourceTree = "<group>"; };
+		B3EE13411DEC7414009A4A32 /* Object.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Object.hpp; sourceTree = "<group>"; };
+		B3EE13431DEC7414009A4A32 /* ReleasePool.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ReleasePool.cpp; sourceTree = "<group>"; };
+		B3EE13441DEC7414009A4A32 /* ReleasePool.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ReleasePool.hpp; sourceTree = "<group>"; };
+		B3EE13471DEC743A009A4A32 /* Array.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Array.cpp; sourceTree = "<group>"; };
+		B3EE13481DEC743A009A4A32 /* Array.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Array.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +126,7 @@
 		B3EE12591DEC1BE4009A4A32 /* XYZGameEngine */ = {
 			isa = PBXGroup;
 			children = (
+				B3EE12831DEC1F45009A4A32 /* Engine */,
 				B3EE125D1DEC1BE4009A4A32 /* AppDelegate.h */,
 				B3EE125E1DEC1BE4009A4A32 /* AppDelegate.m */,
 				B3EE12601DEC1BE4009A4A32 /* ViewController.h */,
@@ -109,6 +155,187 @@
 				B3EE12761DEC1BE4009A4A32 /* Info.plist */,
 			);
 			path = XYZGameEngineTests;
+			sourceTree = "<group>";
+		};
+		B3EE12831DEC1F45009A4A32 /* Engine */ = {
+			isa = PBXGroup;
+			children = (
+				B3EE133B1DEC7414009A4A32 /* Base */,
+				B3EE131B1DEC64F8009A4A32 /* Game */,
+				B3EE13071DEC59BE009A4A32 /* Platform */,
+				B3EE128C1DEC21DF009A4A32 /* Locker */,
+				B3EE12851DEC1F45009A4A32 /* Core */,
+			);
+			path = Engine;
+			sourceTree = "<group>";
+		};
+		B3EE12851DEC1F45009A4A32 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				B3EE12F61DEC554C009A4A32 /* Shader */,
+				B3EE12861DEC1F45009A4A32 /* GLESProgram.cpp */,
+				B3EE12871DEC1F45009A4A32 /* GLESProgram.hpp */,
+				B3EE12F31DEC54DC009A4A32 /* GLESTexture.cpp */,
+				B3EE12F41DEC54DC009A4A32 /* GLESTexture.hpp */,
+				B3EE130F1DEC5C36009A4A32 /* GLESBuffer.cpp */,
+				B3EE13101DEC5C36009A4A32 /* GLESBuffer.hpp */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		B3EE128C1DEC21DF009A4A32 /* Locker */ = {
+			isa = PBXGroup;
+			children = (
+				B3EE128D1DEC21E9009A4A32 /* Locker.h */,
+			);
+			path = Locker;
+			sourceTree = "<group>";
+		};
+		B3EE12F61DEC554C009A4A32 /* Shader */ = {
+			isa = PBXGroup;
+			children = (
+				B3EE12FA1DEC557D009A4A32 /* TextureShader.frag */,
+				B3EE12FB1DEC557D009A4A32 /* TextureShader.vert */,
+				B3EE12F81DEC5559009A4A32 /* GLESShader.h */,
+			);
+			path = Shader;
+			sourceTree = "<group>";
+		};
+		B3EE13071DEC59BE009A4A32 /* Platform */ = {
+			isa = PBXGroup;
+			children = (
+				B3EE13081DEC59BE009A4A32 /* iOS */,
+			);
+			path = Platform;
+			sourceTree = "<group>";
+		};
+		B3EE13081DEC59BE009A4A32 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				B3EE13091DEC59BE009A4A32 /* XYZGameEngineView.h */,
+				B3EE130A1DEC59BE009A4A32 /* XYZGameEngineView.mm */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
+		B3EE131B1DEC64F8009A4A32 /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				B3EE132F1DEC7172009A4A32 /* Components */,
+				B3EE131C1DEC64F8009A4A32 /* Frame */,
+				B3EE131F1DEC64F8009A4A32 /* GameObject */,
+				B3EE13271DEC64F8009A4A32 /* Scene */,
+			);
+			path = Game;
+			sourceTree = "<group>";
+		};
+		B3EE131C1DEC64F8009A4A32 /* Frame */ = {
+			isa = PBXGroup;
+			children = (
+				B3EE131D1DEC64F8009A4A32 /* Frame.cpp */,
+				B3EE131E1DEC64F8009A4A32 /* Frame.hpp */,
+			);
+			path = Frame;
+			sourceTree = "<group>";
+		};
+		B3EE131F1DEC64F8009A4A32 /* GameObject */ = {
+			isa = PBXGroup;
+			children = (
+				B3EE13201DEC64F8009A4A32 /* GameObject.cpp */,
+				B3EE13211DEC64F8009A4A32 /* GameObject.hpp */,
+			);
+			path = GameObject;
+			sourceTree = "<group>";
+		};
+		B3EE13271DEC64F8009A4A32 /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				B3EE13281DEC64F8009A4A32 /* Scene.cpp */,
+				B3EE13291DEC64F8009A4A32 /* Scene.hpp */,
+			);
+			path = Scene;
+			sourceTree = "<group>";
+		};
+		B3EE132F1DEC7172009A4A32 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				B3EE13301DEC7172009A4A32 /* Conponent */,
+				B3EE13311DEC7172009A4A32 /* Mesh */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		B3EE13301DEC7172009A4A32 /* Conponent */ = {
+			isa = PBXGroup;
+			children = (
+				B3EE13381DEC7183009A4A32 /* Conponent.cpp */,
+				B3EE13391DEC7183009A4A32 /* Conponent.hpp */,
+			);
+			path = Conponent;
+			sourceTree = "<group>";
+		};
+		B3EE13311DEC7172009A4A32 /* Mesh */ = {
+			isa = PBXGroup;
+			children = (
+				B3EE13321DEC7172009A4A32 /* CubeMesh.cpp */,
+				B3EE13331DEC7172009A4A32 /* CubeMesh.hpp */,
+				B3EE13341DEC7172009A4A32 /* Mesh.cpp */,
+				B3EE13351DEC7172009A4A32 /* Mesh.hpp */,
+			);
+			path = Mesh;
+			sourceTree = "<group>";
+		};
+		B3EE133B1DEC7414009A4A32 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				B3EE133C1DEC7414009A4A32 /* Collection */,
+				B3EE133F1DEC7414009A4A32 /* Object */,
+				B3EE13421DEC7414009A4A32 /* ReleasePool */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		B3EE133C1DEC7414009A4A32 /* Collection */ = {
+			isa = PBXGroup;
+			children = (
+				B3EE133D1DEC7414009A4A32 /* Array */,
+				B3EE133E1DEC7414009A4A32 /* Dictionary */,
+			);
+			path = Collection;
+			sourceTree = "<group>";
+		};
+		B3EE133D1DEC7414009A4A32 /* Array */ = {
+			isa = PBXGroup;
+			children = (
+				B3EE13471DEC743A009A4A32 /* Array.cpp */,
+				B3EE13481DEC743A009A4A32 /* Array.hpp */,
+			);
+			path = Array;
+			sourceTree = "<group>";
+		};
+		B3EE133E1DEC7414009A4A32 /* Dictionary */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Dictionary;
+			sourceTree = "<group>";
+		};
+		B3EE133F1DEC7414009A4A32 /* Object */ = {
+			isa = PBXGroup;
+			children = (
+				B3EE13401DEC7414009A4A32 /* Object.cpp */,
+				B3EE13411DEC7414009A4A32 /* Object.hpp */,
+			);
+			path = Object;
+			sourceTree = "<group>";
+		};
+		B3EE13421DEC7414009A4A32 /* ReleasePool */ = {
+			isa = PBXGroup;
+			children = (
+				B3EE13431DEC7414009A4A32 /* ReleasePool.cpp */,
+				B3EE13441DEC7414009A4A32 /* ReleasePool.hpp */,
+			);
+			path = ReleasePool;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,7 +424,9 @@
 			files = (
 				B3EE126A1DEC1BE4009A4A32 /* LaunchScreen.storyboard in Resources */,
 				B3EE12671DEC1BE4009A4A32 /* Assets.xcassets in Resources */,
+				B3EE12FC1DEC557D009A4A32 /* TextureShader.frag in Resources */,
 				B3EE12651DEC1BE4009A4A32 /* Main.storyboard in Resources */,
+				B3EE12FD1DEC557D009A4A32 /* TextureShader.vert in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,8 +445,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3EE12621DEC1BE4009A4A32 /* ViewController.m in Sources */,
+				B3EE130B1DEC59BE009A4A32 /* XYZGameEngineView.mm in Sources */,
+				B3EE132B1DEC64F8009A4A32 /* GameObject.cpp in Sources */,
 				B3EE125F1DEC1BE4009A4A32 /* AppDelegate.m in Sources */,
+				B3EE13451DEC7414009A4A32 /* Object.cpp in Sources */,
+				B3EE132A1DEC64F8009A4A32 /* Frame.cpp in Sources */,
+				B3EE13461DEC7414009A4A32 /* ReleasePool.cpp in Sources */,
+				B3EE13361DEC7172009A4A32 /* CubeMesh.cpp in Sources */,
+				B3EE12F51DEC54DC009A4A32 /* GLESTexture.cpp in Sources */,
+				B3EE13491DEC743A009A4A32 /* Array.cpp in Sources */,
+				B3EE132E1DEC64F8009A4A32 /* Scene.cpp in Sources */,
 				B3EE125C1DEC1BE4009A4A32 /* main.m in Sources */,
+				B3EE13111DEC5C36009A4A32 /* GLESBuffer.cpp in Sources */,
+				B3EE13371DEC7172009A4A32 /* Mesh.cpp in Sources */,
+				B3EE133A1DEC7183009A4A32 /* Conponent.cpp in Sources */,
+				B3EE12881DEC1F45009A4A32 /* GLESProgram.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,6 +660,7 @@
 				B3EE127B1DEC1BE4009A4A32 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B3EE127C1DEC1BE4009A4A32 /* Build configuration list for PBXNativeTarget "XYZGameEngineTests" */ = {
 			isa = XCConfigurationList;
@@ -426,6 +669,7 @@
 				B3EE127E1DEC1BE4009A4A32 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
