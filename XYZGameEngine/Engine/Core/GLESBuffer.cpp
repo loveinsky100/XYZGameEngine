@@ -16,6 +16,11 @@ GLESBuffer::GLESBuffer()
     
 }
 
+bool GLESBuffer::init()
+{
+    return true;
+}
+
 void GLESBuffer::setupBuffer()
 {
     glGenRenderbuffers(1, &renderBuffer);
@@ -77,4 +82,9 @@ void GLESBuffer::destoryBuffer()
     renderBuffer = 0;
     frameBuffer = 0;
     stencilDeepthBuffer = 0;
+}
+
+void GLESBuffer::bindFrameBuffer()
+{
+    glBindFramebuffer(GL_FRAMEBUFFER, frameBuffer);
 }

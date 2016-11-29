@@ -23,7 +23,6 @@
 		B3EE132A1DEC64F8009A4A32 /* Frame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3EE131D1DEC64F8009A4A32 /* Frame.cpp */; };
 		B3EE132B1DEC64F8009A4A32 /* GameObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3EE13201DEC64F8009A4A32 /* GameObject.cpp */; };
 		B3EE132E1DEC64F8009A4A32 /* Scene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3EE13281DEC64F8009A4A32 /* Scene.cpp */; };
-		B3EE13361DEC7172009A4A32 /* CubeMesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3EE13321DEC7172009A4A32 /* CubeMesh.cpp */; };
 		B3EE13371DEC7172009A4A32 /* Mesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3EE13341DEC7172009A4A32 /* Mesh.cpp */; };
 		B3EE133A1DEC7183009A4A32 /* Conponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3EE13381DEC7183009A4A32 /* Conponent.cpp */; };
 		B3EE13451DEC7414009A4A32 /* Object.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3EE13401DEC7414009A4A32 /* Object.cpp */; };
@@ -32,6 +31,13 @@
 		B3EE134C1DEC8340009A4A32 /* Dictionary.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3EE134A1DEC8340009A4A32 /* Dictionary.cpp */; };
 		B3EE134F1DED1AF8009A4A32 /* ArrayTest.mm in Sources */ = {isa = PBXBuildFile; fileRef = B3EE134E1DED1AF8009A4A32 /* ArrayTest.mm */; };
 		B3EE13521DED24CB009A4A32 /* TestObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3EE13501DED24CB009A4A32 /* TestObject.cpp */; };
+		B3EE13551DED49C6009A4A32 /* Cube.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3EE13531DED49C6009A4A32 /* Cube.cpp */; };
+		B3EE13581DED503B009A4A32 /* GLESMesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3EE13561DED503B009A4A32 /* GLESMesh.cpp */; };
+		B3EE135B1DED5663009A4A32 /* GLESDraw.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3EE13591DED5663009A4A32 /* GLESDraw.cpp */; };
+		B3EE135E1DED568F009A4A32 /* GLESLighting.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3EE135C1DED568F009A4A32 /* GLESLighting.cpp */; };
+		B3EE13621DED5AFF009A4A32 /* GLESMath.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3EE13611DED5AFF009A4A32 /* GLESMath.cpp */; };
+		B3EE13651DED5F3C009A4A32 /* GLESMatrix.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3EE13631DED5F3C009A4A32 /* GLESMatrix.cpp */; };
+		B3EE13681DED6A42009A4A32 /* SkyBoxMesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3EE13661DED6A42009A4A32 /* SkyBoxMesh.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,8 +82,6 @@
 		B3EE13211DEC64F8009A4A32 /* GameObject.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = GameObject.hpp; sourceTree = "<group>"; };
 		B3EE13281DEC64F8009A4A32 /* Scene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Scene.cpp; sourceTree = "<group>"; };
 		B3EE13291DEC64F8009A4A32 /* Scene.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Scene.hpp; sourceTree = "<group>"; };
-		B3EE13321DEC7172009A4A32 /* CubeMesh.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CubeMesh.cpp; sourceTree = "<group>"; };
-		B3EE13331DEC7172009A4A32 /* CubeMesh.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CubeMesh.hpp; sourceTree = "<group>"; };
 		B3EE13341DEC7172009A4A32 /* Mesh.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Mesh.cpp; sourceTree = "<group>"; };
 		B3EE13351DEC7172009A4A32 /* Mesh.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Mesh.hpp; sourceTree = "<group>"; };
 		B3EE13381DEC7183009A4A32 /* Conponent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Conponent.cpp; sourceTree = "<group>"; };
@@ -93,6 +97,20 @@
 		B3EE134E1DED1AF8009A4A32 /* ArrayTest.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ArrayTest.mm; sourceTree = "<group>"; };
 		B3EE13501DED24CB009A4A32 /* TestObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestObject.cpp; sourceTree = "<group>"; };
 		B3EE13511DED24CB009A4A32 /* TestObject.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = TestObject.hpp; sourceTree = "<group>"; };
+		B3EE13531DED49C6009A4A32 /* Cube.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Cube.cpp; sourceTree = "<group>"; };
+		B3EE13541DED49C6009A4A32 /* Cube.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Cube.hpp; sourceTree = "<group>"; };
+		B3EE13561DED503B009A4A32 /* GLESMesh.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GLESMesh.cpp; sourceTree = "<group>"; };
+		B3EE13571DED503B009A4A32 /* GLESMesh.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = GLESMesh.hpp; sourceTree = "<group>"; };
+		B3EE13591DED5663009A4A32 /* GLESDraw.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GLESDraw.cpp; sourceTree = "<group>"; };
+		B3EE135A1DED5663009A4A32 /* GLESDraw.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = GLESDraw.hpp; sourceTree = "<group>"; };
+		B3EE135C1DED568F009A4A32 /* GLESLighting.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GLESLighting.cpp; sourceTree = "<group>"; };
+		B3EE135D1DED568F009A4A32 /* GLESLighting.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = GLESLighting.hpp; sourceTree = "<group>"; };
+		B3EE13601DED5AFF009A4A32 /* GLESMath.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = GLESMath.hpp; sourceTree = "<group>"; };
+		B3EE13611DED5AFF009A4A32 /* GLESMath.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GLESMath.cpp; sourceTree = "<group>"; };
+		B3EE13631DED5F3C009A4A32 /* GLESMatrix.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GLESMatrix.cpp; sourceTree = "<group>"; };
+		B3EE13641DED5F3C009A4A32 /* GLESMatrix.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = GLESMatrix.hpp; sourceTree = "<group>"; };
+		B3EE13661DED6A42009A4A32 /* SkyBoxMesh.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SkyBoxMesh.cpp; sourceTree = "<group>"; };
+		B3EE13671DED6A42009A4A32 /* SkyBoxMesh.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = SkyBoxMesh.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +199,7 @@
 		B3EE12851DEC1F45009A4A32 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				B3EE135F1DED5AEE009A4A32 /* Math */,
 				B3EE12F61DEC554C009A4A32 /* Shader */,
 				B3EE12861DEC1F45009A4A32 /* GLESProgram.cpp */,
 				B3EE12871DEC1F45009A4A32 /* GLESProgram.hpp */,
@@ -188,6 +207,14 @@
 				B3EE12F41DEC54DC009A4A32 /* GLESTexture.hpp */,
 				B3EE130F1DEC5C36009A4A32 /* GLESBuffer.cpp */,
 				B3EE13101DEC5C36009A4A32 /* GLESBuffer.hpp */,
+				B3EE13561DED503B009A4A32 /* GLESMesh.cpp */,
+				B3EE13571DED503B009A4A32 /* GLESMesh.hpp */,
+				B3EE13591DED5663009A4A32 /* GLESDraw.cpp */,
+				B3EE135A1DED5663009A4A32 /* GLESDraw.hpp */,
+				B3EE135C1DED568F009A4A32 /* GLESLighting.cpp */,
+				B3EE135D1DED568F009A4A32 /* GLESLighting.hpp */,
+				B3EE13631DED5F3C009A4A32 /* GLESMatrix.cpp */,
+				B3EE13641DED5F3C009A4A32 /* GLESMatrix.hpp */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -286,10 +313,12 @@
 		B3EE13311DEC7172009A4A32 /* Mesh */ = {
 			isa = PBXGroup;
 			children = (
-				B3EE13321DEC7172009A4A32 /* CubeMesh.cpp */,
-				B3EE13331DEC7172009A4A32 /* CubeMesh.hpp */,
 				B3EE13341DEC7172009A4A32 /* Mesh.cpp */,
 				B3EE13351DEC7172009A4A32 /* Mesh.hpp */,
+				B3EE13531DED49C6009A4A32 /* Cube.cpp */,
+				B3EE13541DED49C6009A4A32 /* Cube.hpp */,
+				B3EE13661DED6A42009A4A32 /* SkyBoxMesh.cpp */,
+				B3EE13671DED6A42009A4A32 /* SkyBoxMesh.hpp */,
 			);
 			path = Mesh;
 			sourceTree = "<group>";
@@ -357,6 +386,15 @@
 				B3EE13511DED24CB009A4A32 /* TestObject.hpp */,
 			);
 			path = UnitTest;
+			sourceTree = "<group>";
+		};
+		B3EE135F1DED5AEE009A4A32 /* Math */ = {
+			isa = PBXGroup;
+			children = (
+				B3EE13601DED5AFF009A4A32 /* GLESMath.hpp */,
+				B3EE13611DED5AFF009A4A32 /* GLESMath.cpp */,
+			);
+			path = Math;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -465,15 +503,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3EE13551DED49C6009A4A32 /* Cube.cpp in Sources */,
 				B3EE134C1DEC8340009A4A32 /* Dictionary.cpp in Sources */,
+				B3EE135E1DED568F009A4A32 /* GLESLighting.cpp in Sources */,
+				B3EE135B1DED5663009A4A32 /* GLESDraw.cpp in Sources */,
+				B3EE13681DED6A42009A4A32 /* SkyBoxMesh.cpp in Sources */,
 				B3EE12621DEC1BE4009A4A32 /* ViewController.m in Sources */,
+				B3EE13581DED503B009A4A32 /* GLESMesh.cpp in Sources */,
 				B3EE130B1DEC59BE009A4A32 /* XYZGameEngineView.mm in Sources */,
 				B3EE132B1DEC64F8009A4A32 /* GameObject.cpp in Sources */,
 				B3EE125F1DEC1BE4009A4A32 /* AppDelegate.m in Sources */,
 				B3EE13451DEC7414009A4A32 /* Object.cpp in Sources */,
 				B3EE132A1DEC64F8009A4A32 /* Frame.cpp in Sources */,
+				B3EE13651DED5F3C009A4A32 /* GLESMatrix.cpp in Sources */,
 				B3EE13461DEC7414009A4A32 /* ReleasePool.cpp in Sources */,
-				B3EE13361DEC7172009A4A32 /* CubeMesh.cpp in Sources */,
 				B3EE12F51DEC54DC009A4A32 /* GLESTexture.cpp in Sources */,
 				B3EE13521DED24CB009A4A32 /* TestObject.cpp in Sources */,
 				B3EE13491DEC743A009A4A32 /* Array.cpp in Sources */,
@@ -482,6 +525,7 @@
 				B3EE13111DEC5C36009A4A32 /* GLESBuffer.cpp in Sources */,
 				B3EE13371DEC7172009A4A32 /* Mesh.cpp in Sources */,
 				B3EE133A1DEC7183009A4A32 /* Conponent.cpp in Sources */,
+				B3EE13621DED5AFF009A4A32 /* GLESMath.cpp in Sources */,
 				B3EE12881DEC1F45009A4A32 /* GLESProgram.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

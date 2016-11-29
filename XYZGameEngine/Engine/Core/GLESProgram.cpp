@@ -11,6 +11,11 @@
 
 using namespace XYZGame;
 
+bool GLESProgram::init()
+{
+    return true;
+}
+
 void GLESProgram::loadVertexShader(string shader)
 {
     this->loadShader(shader, GL_VERTEX_SHADER);

@@ -11,6 +11,8 @@
 
 #include <stdio.h>
 #include <functional>
+#include <string>
+#include <list>
 #include "Locker.h"
 
 #define CreateInit(ObjectClass) \
@@ -25,11 +27,15 @@ static ObjectClass *create() \
     } \
     else \
     { \
-        object -> autoRelease(); \
+        object -> autorelease(); \
     } \
      \
     return object; \
 }
+
+#define weak
+#define strong
+#define assign
 
 namespace XYZGame
 {
@@ -47,9 +53,11 @@ namespace XYZGame
         CreateInit(Object)
         
         void release();
-        Object *autoRelease();
+        Object *autorelease();
         Object *retain();
         int getRetainCount();
+        
+        virtual void dealloc();
     };
 }
 

@@ -50,6 +50,7 @@ void ReleasePool::destory()
     {
         Object *object = destoryObjects.back();
         destoryObjects.pop_back();
+        object->dealloc();
         delete object;
     }
 }

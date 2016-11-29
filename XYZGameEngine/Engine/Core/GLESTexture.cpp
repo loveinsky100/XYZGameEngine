@@ -7,3 +7,15 @@
 //
 
 #include "GLESTexture.hpp"
+
+using namespace XYZGame;
+
+bool GLESTexture::init()
+{
+    return true;
+}
+
+void GLESTexture::loadTexture()
+{
+    
+}

@@ -10,16 +10,15 @@
 #define GLESProgram_hpp
 
 #include <stdio.h>
-#include <functional>
-#include <string>
 #include <OpenGLES/ES2/gl.h>
 #include "GLESShader.h"
+#include "Object.hpp"
 
 using namespace std;
 
 namespace XYZGame
 {
-    class GLESProgram
+    class GLESProgram : public Object
     {
     private:
         GLuint programId;
@@ -28,6 +27,9 @@ namespace XYZGame
         
         void loadShader(string shader, GLenum shaderType);
     public:
+        
+        CreateInit(GLESProgram);
+        
         void loadVertexShader(string shader);
         void loadFragmentShader(string shader);
         

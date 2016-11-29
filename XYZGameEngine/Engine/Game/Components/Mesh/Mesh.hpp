@@ -10,14 +10,27 @@
 #define Mesh_hpp
 
 #include <stdio.h>
-#include "Object.hpp"
+#include "Conponent.hpp"
+#include "GLESMesh.hpp"
+#include "GLESProgram.hpp"
+#include "Array.hpp"
 
 namespace XYZGame
 {
-    class Mesh : Object
+    class Mesh : public Conponent
     {
-    public:
+    private:
+        strong Array *meshs; // GLESMesh *;
         
+    public:
+        CreateInit(Mesh);
+        
+        virtual void dealloc();
+        virtual void genGPUBuffer();
+        virtual void render();
+        
+    protected:
+        virtual GLESProgram *sharedProgram();
     };
 }
 

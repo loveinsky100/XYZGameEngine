@@ -14,7 +14,7 @@
 
 namespace XYZGame
 {
-    class Conponent : Object
+    class Conponent : public Object
     {
     private:
         bool isEnable;

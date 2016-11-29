@@ -70,75 +70,75 @@ using namespace XYZGame;
 }
 
 - (void)testAddRemoveInsertIndexObject {
-    Array *array = Array::create();
     
-    [self addObject:array message:@"1"];
-    [self addObject:array message:@"2"];
-    [self addObject:array message:@"4"];
-    
-    [self insetObject:array message:@"0" at:0];
-    [self insetObject:array message:@"3" at:3];
-    [self insetObject:array message:@"5" at:5];
-    
-    TestObject *object = TestObject::create();
-    object->message = (char *)[@"6" UTF8String];
-    array->insert(6, object);
-    
-    TestObject *object2 = TestObject::create();
-    object2->message = (char *)[@"7" UTF8String];
-    array->insert(7, object2);
-    
-    TestObject *object3 = TestObject::create();
-    object3->message = (char *)[@"-1" UTF8String];
-    array->insert(0, object3);
-    
-    TestObject *object4 = TestObject::create();
-    object4->message = (char *)[@"-1" UTF8String];
-    
-    XCTAssert(array->contain(object));
-    XCTAssert(array->contain(object2));
-    XCTAssert(array->contain(object3));
-    XCTAssert(!array->contain(object4));
-    
-    // -1, 0, 1, 2, 3, 4, 5, 6, 7
-    XCTAssert([[self print:array] isEqualToString:@"-101234567"]);
-    
-    array->remove(object);
-    // -1, 0, 1, 2, 3, 4, 5, 7
-    XCTAssert([[self print:array] isEqualToString:@"-10123457"]);
-    
-    array->remove(object2);
-    // -1, 0, 1, 2, 3, 4, 5
-    XCTAssert([[self print:array] isEqualToString:@"-1012345"]);
-    
-    array->remove(object3);
-    // 0, 1, 2, 3, 4, 5
-    XCTAssert([[self print:array] isEqualToString:@"012345"]);
-    
-    array->removeAt(3);
-    // 0, 1, 2, 4, 5
-    XCTAssert([[self print:array] isEqualToString:@"01245"]);
- 
-    array->removeAt(array->count() - 1);
-    // 0, 1, 2, 4
-    XCTAssert([[self print:array] isEqualToString:@"0124"]);
-    
-    array->removeAt(3);
-    // 0, 1, 2
-    XCTAssert([[self print:array] isEqualToString:@"012"]);
-    
-    array->removeAt(0);
-    // 1, 2
-    XCTAssert([[self print:array] isEqualToString:@"12"]);
-    
-    array->removeAll();
-    XCTAssert([[self print:array] isEqualToString:@""]);
 }
 
 - (void)testRemoveAll {
     // This is an example of a performance test case.
     [self measureBlock:^{
-        // Put the code you want to measure the time of here.
+        Array *array = Array::create();
+        
+        [self addObject:array message:@"1"];
+        [self addObject:array message:@"2"];
+        [self addObject:array message:@"4"];
+        
+        [self insetObject:array message:@"0" at:0];
+        [self insetObject:array message:@"3" at:3];
+        [self insetObject:array message:@"5" at:5];
+        
+        TestObject *object = TestObject::create();
+        object->message = (char *)[@"6" UTF8String];
+        array->insert(6, object);
+        
+        TestObject *object2 = TestObject::create();
+        object2->message = (char *)[@"7" UTF8String];
+        array->insert(7, object2);
+        
+        TestObject *object3 = TestObject::create();
+        object3->message = (char *)[@"-1" UTF8String];
+        array->insert(0, object3);
+        
+        TestObject *object4 = TestObject::create();
+        object4->message = (char *)[@"-1" UTF8String];
+        
+        XCTAssert(array->contain(object));
+        XCTAssert(array->contain(object2));
+        XCTAssert(array->contain(object3));
+        XCTAssert(!array->contain(object4));
+        
+        // -1, 0, 1, 2, 3, 4, 5, 6, 7
+        XCTAssert([[self print:array] isEqualToString:@"-101234567"]);
+        
+        array->remove(object);
+        // -1, 0, 1, 2, 3, 4, 5, 7
+        XCTAssert([[self print:array] isEqualToString:@"-10123457"]);
+        
+        array->remove(object2);
+        // -1, 0, 1, 2, 3, 4, 5
+        XCTAssert([[self print:array] isEqualToString:@"-1012345"]);
+        
+        array->remove(object3);
+        // 0, 1, 2, 3, 4, 5
+        XCTAssert([[self print:array] isEqualToString:@"012345"]);
+        
+        array->removeAt(3);
+        // 0, 1, 2, 4, 5
+        XCTAssert([[self print:array] isEqualToString:@"01245"]);
+        
+        array->removeAt(array->count() - 1);
+        // 0, 1, 2, 4
+        XCTAssert([[self print:array] isEqualToString:@"0124"]);
+        
+        array->removeAt(3);
+        // 0, 1, 2
+        XCTAssert([[self print:array] isEqualToString:@"012"]);
+        
+        array->removeAt(0);
+        // 1, 2
+        XCTAssert([[self print:array] isEqualToString:@"12"]);
+        
+        array->removeAll();
+        XCTAssert([[self print:array] isEqualToString:@""]);
     }];
 }
 

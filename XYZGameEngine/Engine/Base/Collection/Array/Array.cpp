@@ -10,6 +10,11 @@
 
 using namespace XYZGame;
 
+void Array::dealloc()
+{
+    this->removeAll();
+}
+
 bool Array::init()
 {
     Object::init();

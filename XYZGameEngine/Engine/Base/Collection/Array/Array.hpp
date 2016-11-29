@@ -32,7 +32,7 @@ namespace XYZGame
     
     typedef std::function<void(Object *, int)> ArrayEnunmerateFunc;
     
-    class Array : Object
+    class Array : public Object
     {
     private:
         Mutex lock;
@@ -56,6 +56,8 @@ namespace XYZGame
         void enumerate(ArrayEnunmerateFunc func);
         
         Object *objectAt(int index);
+        
+        virtual void dealloc();
         
         int count();
     };

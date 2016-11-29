@@ -29,6 +29,11 @@ bool Object::init()
     return true;
 }
 
+void Object::dealloc()
+{
+    
+}
+
 void Object::release()
 {
     Locker l(lock);
@@ -40,7 +45,7 @@ void Object::release()
     }
 }
 
-Object *Object::autoRelease()
+Object *Object::autorelease()
 {
     Locker l(lock);
     ReleasePool::sharedReleasePool()->addAutoRelease(this);

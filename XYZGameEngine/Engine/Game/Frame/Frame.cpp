@@ -24,7 +24,8 @@ Frame *Frame::sharedFrame()
 
 Frame::Frame()
 {
-    this->buffer = new GLESBuffer();
+    this->buffer = GLESBuffer::create();
+    this->buffer->retain();
 }
 
 void Frame::initBuffer()
