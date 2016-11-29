@@ -48,8 +48,8 @@ void ReleasePool::destory()
     Locker l(lock);
     while (destoryObjects.size() != 0)
     {
-        Object *object = autoReleaseObjects.back();
-        autoReleaseObjects.pop_back();
+        Object *object = destoryObjects.back();
+        destoryObjects.pop_back();
         delete object;
     }
 }

@@ -10,6 +10,15 @@
 
 using namespace XYZGame;
 
+bool Array::init()
+{
+    Object::init();
+    this->first = nullptr;
+    this->last = nullptr;
+    
+    return true;
+}
+
 void Array::add(Object *object)
 {
     Locker l(lock);
@@ -18,7 +27,6 @@ void Array::add(Object *object)
     if(this->size == 0)
     {
         this->first = arrayNode;
-        this->last = arrayNode;
         arrayNode->pre = arrayNode;
     }
     else
@@ -27,6 +35,7 @@ void Array::add(Object *object)
         this->last->next = arrayNode;
     }
     
+    this->last = arrayNode;
     object->retain();
     this->size++;
 }
@@ -58,16 +67,16 @@ void Array::insert(int index, Object *object)
     else
     {
         int count = 0;
-        for(ArrayNode *node = this->first; node->next == nullptr; node = node->next)
+        for(ArrayNode *node = this->first; node != nullptr; node = node->next)
         {
             if(count == index)
             {
-                arrayNode->pre = node;
-                arrayNode->next = node->next;
-                
-                node->next->pre = arrayNode;
                 node->pre->next = arrayNode;
-                return;
+                arrayNode->pre = node->pre;
+                node->pre = arrayNode;
+                arrayNode->next = node;
+                
+                break;
             }
             
             count++;
@@ -86,7 +95,7 @@ bool Array::contain(Object *object)
         return false;
     }
     
-    for(ArrayNode *node = this->first; node->next == nullptr; node = node->next)
+    for(ArrayNode *node = this->first; node != nullptr; node = node->next)
     {
         if(object == node->object)
         {
@@ -105,12 +114,16 @@ void Array::remove(Object *object)
         return;
     }
     
-    for(ArrayNode *node = this->first; node->next == nullptr; node = node->next)
+    ArrayNode *node = this->first;
+    while (node != nullptr)
     {
+        ArrayNode *nextNode = node -> next;
         if(object == node->object)
         {
             this->remove(node);
         }
+        
+        node = nextNode;
     }
 }
 
@@ -119,13 +132,23 @@ void Array::remove(ArrayNode *node)
     if(node->object == this->first->object)
     {
         this->first = this->first->next;
+        if(this->first != nullptr)
+        {
+            this->first->pre = this->first;
+        }
+        else
+        {
+            this->last = nullptr;
+        }
     }
     else if(node->object == this->last->object)
     {
         this->last = this->last->pre;
+        this->last->next = nullptr;
     }
     else
     {
+        node->next->pre = node->pre;
         node->pre->next = node->next;
     }
     
@@ -137,21 +160,42 @@ void Array::remove(ArrayNode *node)
 void Array::removeAt(int index)
 {
     Locker l(lock);
-    if(this->first == nullptr || index >= this->size)
+    if(this->first == nullptr || index >= this->size || index < 0)
     {
         return;
     }
     
     int count = 0;
-    for(ArrayNode *node = this->first; node->next == nullptr; node = node->next)
+    ArrayNode *node = this->first;
+    while (node != nullptr)
     {
+        ArrayNode *nextNode = node -> next;
         if(count == index)
         {
             this->remove(node);
             return;
         }
         
+        node = nextNode;
         count++;
+    }
+}
+
+void Array::removeAll()
+{
+    Locker l(lock);
+    if(this->size == 0)
+    {
+        return;
+    }
+    
+    ArrayNode *node = this->first;
+    while (node != nullptr)
+    {
+        ArrayNode *nextNode = node -> next;
+        this->remove(node);
+        
+        node = nextNode;
     }
 }
 
@@ -164,7 +208,7 @@ Object *Array::objectAt(int index)
     }
     
     int count = 0;
-    for(ArrayNode *node = this->first; node->next == nullptr; node = node->next)
+    for(ArrayNode *node = this->first; node != nullptr; node = node->next)
     {
         if(count == index)
         {
@@ -175,6 +219,22 @@ Object *Array::objectAt(int index)
     }
     
     return nullptr;
+}
+
+void Array::enumerate(ArrayEnunmerateFunc func)
+{
+    Locker l(lock);
+    int count = 0;
+    ArrayNode *node = this->first;
+    while (node != nullptr)
+    {
+        ArrayNode *nextNode = node -> next;
+        
+        func(node->object, count);
+        
+        node = nextNode;
+        count++;
+    }
 }
 
 int Array::count()

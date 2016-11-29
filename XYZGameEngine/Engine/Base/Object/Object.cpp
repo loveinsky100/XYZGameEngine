@@ -36,7 +36,7 @@ void Object::release()
     if(this->retainCount <= 0 && !this->isDestory)
     {
         this->isDestory = true;
-        ReleasePool::sharedReleasePool()->addDestory(this);
+        delete this;
     }
 }
 
@@ -52,4 +52,10 @@ Object *Object::retain()
     Locker l(lock);
     this->retainCount ++;
     return this;
+}
+
+int Object::getRetainCount()
+{
+    Locker l(lock);
+    return this->retainCount;
 }

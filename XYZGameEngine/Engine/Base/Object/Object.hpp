@@ -13,11 +13,11 @@
 #include <functional>
 #include "Locker.h"
 
-#define CreateInit(Object) \
+#define CreateInit(ObjectClass) \
 virtual bool init(); \
-static Object *create() \
+static ObjectClass *create() \
 { \
-    Object *object = new Object(); \
+    ObjectClass *object = new ObjectClass(); \
     if(!object -> init()) \
     { \
         delete object; \
@@ -49,6 +49,7 @@ namespace XYZGame
         void release();
         Object *autoRelease();
         Object *retain();
+        int getRetainCount();
     };
 }
 

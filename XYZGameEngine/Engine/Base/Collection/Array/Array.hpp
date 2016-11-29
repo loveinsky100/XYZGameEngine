@@ -23,10 +23,14 @@ namespace XYZGame
         Object *object;
         _ArrayNode(Object *object)
         {
+            this->next = nullptr;
+            this->pre = nullptr;
             this->object = object;
         }
         
     }ArrayNode;
+    
+    typedef std::function<void(Object *, int)> ArrayEnunmerateFunc;
     
     class Array : Object
     {
@@ -39,6 +43,7 @@ namespace XYZGame
         void remove(ArrayNode *node);
         
     public:
+        CreateInit(Array);
         void add(Object *object);
         void insert(int index, Object *object);
         
@@ -46,6 +51,9 @@ namespace XYZGame
         
         void remove(Object *object);
         void removeAt(int index);
+        void removeAll();
+        
+        void enumerate(ArrayEnunmerateFunc func);
         
         Object *objectAt(int index);
         

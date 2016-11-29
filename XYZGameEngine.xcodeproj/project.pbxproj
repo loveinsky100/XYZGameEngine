@@ -29,6 +29,9 @@
 		B3EE13451DEC7414009A4A32 /* Object.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3EE13401DEC7414009A4A32 /* Object.cpp */; };
 		B3EE13461DEC7414009A4A32 /* ReleasePool.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3EE13431DEC7414009A4A32 /* ReleasePool.cpp */; };
 		B3EE13491DEC743A009A4A32 /* Array.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3EE13471DEC743A009A4A32 /* Array.cpp */; };
+		B3EE134C1DEC8340009A4A32 /* Dictionary.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3EE134A1DEC8340009A4A32 /* Dictionary.cpp */; };
+		B3EE134F1DED1AF8009A4A32 /* ArrayTest.mm in Sources */ = {isa = PBXBuildFile; fileRef = B3EE134E1DED1AF8009A4A32 /* ArrayTest.mm */; };
+		B3EE13521DED24CB009A4A32 /* TestObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3EE13501DED24CB009A4A32 /* TestObject.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +88,11 @@
 		B3EE13441DEC7414009A4A32 /* ReleasePool.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ReleasePool.hpp; sourceTree = "<group>"; };
 		B3EE13471DEC743A009A4A32 /* Array.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Array.cpp; sourceTree = "<group>"; };
 		B3EE13481DEC743A009A4A32 /* Array.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Array.hpp; sourceTree = "<group>"; };
+		B3EE134A1DEC8340009A4A32 /* Dictionary.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Dictionary.cpp; sourceTree = "<group>"; };
+		B3EE134B1DEC8340009A4A32 /* Dictionary.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Dictionary.hpp; sourceTree = "<group>"; };
+		B3EE134E1DED1AF8009A4A32 /* ArrayTest.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ArrayTest.mm; sourceTree = "<group>"; };
+		B3EE13501DED24CB009A4A32 /* TestObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestObject.cpp; sourceTree = "<group>"; };
+		B3EE13511DED24CB009A4A32 /* TestObject.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = TestObject.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +134,7 @@
 		B3EE12591DEC1BE4009A4A32 /* XYZGameEngine */ = {
 			isa = PBXGroup;
 			children = (
+				B3EE134D1DED1AE1009A4A32 /* UnitTest */,
 				B3EE12831DEC1F45009A4A32 /* Engine */,
 				B3EE125D1DEC1BE4009A4A32 /* AppDelegate.h */,
 				B3EE125E1DEC1BE4009A4A32 /* AppDelegate.m */,
@@ -316,6 +325,8 @@
 		B3EE133E1DEC7414009A4A32 /* Dictionary */ = {
 			isa = PBXGroup;
 			children = (
+				B3EE134A1DEC8340009A4A32 /* Dictionary.cpp */,
+				B3EE134B1DEC8340009A4A32 /* Dictionary.hpp */,
 			);
 			path = Dictionary;
 			sourceTree = "<group>";
@@ -336,6 +347,16 @@
 				B3EE13441DEC7414009A4A32 /* ReleasePool.hpp */,
 			);
 			path = ReleasePool;
+			sourceTree = "<group>";
+		};
+		B3EE134D1DED1AE1009A4A32 /* UnitTest */ = {
+			isa = PBXGroup;
+			children = (
+				B3EE134E1DED1AF8009A4A32 /* ArrayTest.mm */,
+				B3EE13501DED24CB009A4A32 /* TestObject.cpp */,
+				B3EE13511DED24CB009A4A32 /* TestObject.hpp */,
+			);
+			path = UnitTest;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -444,6 +465,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3EE134C1DEC8340009A4A32 /* Dictionary.cpp in Sources */,
 				B3EE12621DEC1BE4009A4A32 /* ViewController.m in Sources */,
 				B3EE130B1DEC59BE009A4A32 /* XYZGameEngineView.mm in Sources */,
 				B3EE132B1DEC64F8009A4A32 /* GameObject.cpp in Sources */,
@@ -453,6 +475,7 @@
 				B3EE13461DEC7414009A4A32 /* ReleasePool.cpp in Sources */,
 				B3EE13361DEC7172009A4A32 /* CubeMesh.cpp in Sources */,
 				B3EE12F51DEC54DC009A4A32 /* GLESTexture.cpp in Sources */,
+				B3EE13521DED24CB009A4A32 /* TestObject.cpp in Sources */,
 				B3EE13491DEC743A009A4A32 /* Array.cpp in Sources */,
 				B3EE132E1DEC64F8009A4A32 /* Scene.cpp in Sources */,
 				B3EE125C1DEC1BE4009A4A32 /* main.m in Sources */,
@@ -468,6 +491,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3EE12751DEC1BE4009A4A32 /* XYZGameEngineTests.m in Sources */,
+				B3EE134F1DED1AF8009A4A32 /* ArrayTest.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
