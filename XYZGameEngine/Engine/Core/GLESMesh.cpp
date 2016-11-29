@@ -16,13 +16,13 @@ bool GLESMesh::init()
     return true;
 }
 
-GLuint GLESMesh::genBuffer(GLvoid *vertexs, GLsizeiptr size)
+GLuint GLESMesh::genBuffer(GLenum target, GLsizeiptr size, const GLvoid* data, GLenum usage)
 {
     GLuint buffer;
     glGenBuffers(1, &buffer);
     
-    glBindBuffer(GL_ARRAY_BUFFER, buffer);
-    glBufferData(GL_ARRAY_BUFFER, size, vertexs, GL_STATIC_DRAW);
+    glBindBuffer(target, buffer);
+    glBufferData(target, size, data, usage);
     
     return buffer;
 }

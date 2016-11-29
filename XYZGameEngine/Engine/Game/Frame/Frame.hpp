@@ -10,24 +10,39 @@
 #define Frame_hpp
 
 #include <stdio.h>
-#include "GLESBuffer.hpp"
+#include <OpenGLES/ES2/gl.h>
 
 namespace XYZGame
 {
+    typedef struct _Size
+    {
+        GLfloat width;
+        GLfloat height;
+        
+        _Size() {};
+        _Size(GLfloat width, GLfloat height)
+        {
+            this->width = width;
+            this->height = height;
+        }
+    }Size;
+    
     class Frame
     {
     private:
+        Size size;
+        
+    private:
         Frame();
-        GLESBuffer *buffer;
         void draw();
         
     public:
         
         static Frame *sharedFrame();
-        
-        void initBuffer();
-        void destoryBuffer();
+        Size currentSize();
+        void setCurrentSize(Size size);
         void update();
+        
     };
 }
 

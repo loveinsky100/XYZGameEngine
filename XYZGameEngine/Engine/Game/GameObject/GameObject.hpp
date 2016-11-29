@@ -22,11 +22,15 @@ namespace XYZGame
     class GameObject : public Object
     {
     private:
-        list<Conponent *> conponent;
+        strong Array *conponents;
         
     public:
         CreateInit(GameObject);
-        void draw();
+        
+        virtual void dealloc();
+        virtual void start();
+        virtual void update();
+        void addConponent(Conponent *conponent);
     };
 }
 

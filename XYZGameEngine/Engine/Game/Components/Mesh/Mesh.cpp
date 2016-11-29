@@ -12,7 +12,7 @@ using namespace XYZGame;
 
 void Mesh::dealloc()
 {
-    this->meshs->release();
+    Release(this->meshs);
 }
 
 bool Mesh::init()
@@ -23,9 +23,23 @@ bool Mesh::init()
     return Conponent::init();
 }
 
-void Mesh::genGPUBuffer()
+void Mesh::start()
 {
     
+}
+
+void Mesh::update()
+{
+    
+}
+
+void Mesh::draw()
+{
+    this->meshs->enumerate([&](Object *object, int index){
+        GLESMesh *mesh = (GLESMesh *)object;
+        mesh->bind();
+        mesh->load();
+    });
 }
 
 void Mesh::render()
@@ -36,6 +50,11 @@ void Mesh::render()
     });
 }
 
+void Mesh::addMesh(GLESMesh *mesh)
+{
+    this->meshs->add(mesh);
+}
+
 GLESProgram *Mesh::sharedProgram()
 {
     static GLESProgram *defaultProgram = nullptr;
@@ -43,8 +62,8 @@ GLESProgram *Mesh::sharedProgram()
     {
         defaultProgram = GLESProgram::create();
         defaultProgram->retain();
-//        defaultProgram->loadVertexShader(string(TextureShader_vert));
-//        defaultProgram->loadFragmentShader(TextureShader_frag);
+        defaultProgram->loadVertexShader(string(TextureShader_vert));
+        defaultProgram->loadFragmentShader(string(TextureShader_frag));
     }
     
     return defaultProgram;

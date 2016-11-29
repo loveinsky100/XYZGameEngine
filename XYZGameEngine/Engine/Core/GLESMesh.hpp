@@ -33,7 +33,7 @@ namespace XYZGame
 
     public:
         CreateInit(GLESMesh);
-        GLuint genBuffer(GLvoid *vertexs, GLsizeiptr size);
+        GLuint genBuffer(GLenum target, GLsizeiptr size, const GLvoid* data, GLenum usage);
         
         void destoryBuffer();
         

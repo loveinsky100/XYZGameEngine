@@ -25,6 +25,7 @@ namespace XYZGame
         void setEnable(bool enable);
         bool enable();
         
+        virtual void start();
         virtual void update();
     };
 }

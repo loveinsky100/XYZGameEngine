@@ -22,15 +22,19 @@ namespace XYZGame
     private:
         strong Array *meshs; // GLESMesh *;
         
+        void draw();
     public:
         CreateInit(Mesh);
         
         virtual void dealloc();
-        virtual void genGPUBuffer();
-        virtual void render();
+        void render();
         
+        virtual void start();
+        virtual void update();
     protected:
         virtual GLESProgram *sharedProgram();
+        void addMesh(GLESMesh *mesh);
+        
     };
 }
 

@@ -57,8 +57,7 @@
 - (void)layoutSubviews
 {
     [super layoutSubviews];
-    XYZGame::Frame::sharedFrame()->destoryBuffer();
-    XYZGame::Frame::sharedFrame()->initBuffer();
+    XYZGame::Frame::sharedFrame()->setCurrentSize(XYZGame::Size(self.bounds.size.width, self.bounds.size.height));
 }
 
 - (void)draw

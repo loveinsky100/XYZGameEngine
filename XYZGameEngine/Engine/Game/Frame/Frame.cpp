@@ -24,18 +24,17 @@ Frame *Frame::sharedFrame()
 
 Frame::Frame()
 {
-    this->buffer = GLESBuffer::create();
-    this->buffer->retain();
+    this->size = Size(1, 1);
 }
 
-void Frame::initBuffer()
+Size Frame::currentSize()
 {
-    this->buffer->setupBuffer();
+    return this->size;
 }
 
-void Frame::destoryBuffer()
+void Frame::setCurrentSize(Size size)
 {
-    this->buffer->destoryBuffer();
+    this->size = size;
 }
 
 void Frame::update()

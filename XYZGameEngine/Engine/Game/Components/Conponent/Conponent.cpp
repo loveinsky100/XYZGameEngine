@@ -26,6 +26,11 @@ bool Conponent::enable()
     return this->isEnable;
 }
 
+void Conponent::start()
+{
+    
+}
+
 void Conponent::update()
 {
     

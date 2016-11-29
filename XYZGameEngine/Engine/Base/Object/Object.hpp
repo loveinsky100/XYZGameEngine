@@ -37,6 +37,13 @@ static ObjectClass *create() \
 #define strong
 #define assign
 
+#define Release(ptr) \
+if(ptr != nullptr) \
+{ \
+    ptr->release(); \
+    ptr = nullptr; \
+}
+
 namespace XYZGame
 {
     class Object
