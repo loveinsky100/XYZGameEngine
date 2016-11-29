@@ -9,11 +9,8 @@
 #ifndef GLESShader_h
 #define GLESShader_h
 
-#include <stdio.h>
+#include "VertextShader.hpp"
+#include "FragmentShader.hpp"
 
-#define STRINGIFY(A)  #A
-
-#include "TextureShader.frag"
-#include "TextureShader.vert"
 
 #endif /* GLESShader_h */

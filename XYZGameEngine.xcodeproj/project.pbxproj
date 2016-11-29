@@ -16,8 +16,6 @@
 		B3EE12751DEC1BE4009A4A32 /* XYZGameEngineTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B3EE12741DEC1BE4009A4A32 /* XYZGameEngineTests.m */; };
 		B3EE12881DEC1F45009A4A32 /* GLESProgram.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3EE12861DEC1F45009A4A32 /* GLESProgram.cpp */; };
 		B3EE12F51DEC54DC009A4A32 /* GLESTexture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3EE12F31DEC54DC009A4A32 /* GLESTexture.cpp */; };
-		B3EE12FC1DEC557D009A4A32 /* TextureShader.frag in Resources */ = {isa = PBXBuildFile; fileRef = B3EE12FA1DEC557D009A4A32 /* TextureShader.frag */; };
-		B3EE12FD1DEC557D009A4A32 /* TextureShader.vert in Resources */ = {isa = PBXBuildFile; fileRef = B3EE12FB1DEC557D009A4A32 /* TextureShader.vert */; };
 		B3EE130B1DEC59BE009A4A32 /* XYZGameEngineView.mm in Sources */ = {isa = PBXBuildFile; fileRef = B3EE130A1DEC59BE009A4A32 /* XYZGameEngineView.mm */; };
 		B3EE13111DEC5C36009A4A32 /* GLESBuffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3EE130F1DEC5C36009A4A32 /* GLESBuffer.cpp */; };
 		B3EE132A1DEC64F8009A4A32 /* Frame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3EE131D1DEC64F8009A4A32 /* Frame.cpp */; };
@@ -51,6 +49,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B39C2FF61DED85ED003A3859 /* VertextShader.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = VertextShader.hpp; sourceTree = "<group>"; };
+		B39C2FF91DED8638003A3859 /* FragmentShader.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = FragmentShader.hpp; sourceTree = "<group>"; };
 		B3EE12571DEC1BE4009A4A32 /* XYZGameEngine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XYZGameEngine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3EE125B1DEC1BE4009A4A32 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B3EE125D1DEC1BE4009A4A32 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -69,9 +69,7 @@
 		B3EE128D1DEC21E9009A4A32 /* Locker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Locker.h; sourceTree = "<group>"; };
 		B3EE12F31DEC54DC009A4A32 /* GLESTexture.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GLESTexture.cpp; sourceTree = "<group>"; };
 		B3EE12F41DEC54DC009A4A32 /* GLESTexture.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = GLESTexture.hpp; sourceTree = "<group>"; };
-		B3EE12F81DEC5559009A4A32 /* GLESShader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLESShader.h; sourceTree = "<group>"; };
-		B3EE12FA1DEC557D009A4A32 /* TextureShader.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = TextureShader.frag; sourceTree = "<group>"; };
-		B3EE12FB1DEC557D009A4A32 /* TextureShader.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = TextureShader.vert; sourceTree = "<group>"; };
+		B3EE12F81DEC5559009A4A32 /* GLESShader.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = GLESShader.hpp; sourceTree = "<group>"; };
 		B3EE13091DEC59BE009A4A32 /* XYZGameEngineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYZGameEngineView.h; sourceTree = "<group>"; };
 		B3EE130A1DEC59BE009A4A32 /* XYZGameEngineView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = XYZGameEngineView.mm; sourceTree = "<group>"; };
 		B3EE130F1DEC5C36009A4A32 /* GLESBuffer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GLESBuffer.cpp; sourceTree = "<group>"; };
@@ -230,9 +228,9 @@
 		B3EE12F61DEC554C009A4A32 /* Shader */ = {
 			isa = PBXGroup;
 			children = (
-				B3EE12FA1DEC557D009A4A32 /* TextureShader.frag */,
-				B3EE12FB1DEC557D009A4A32 /* TextureShader.vert */,
-				B3EE12F81DEC5559009A4A32 /* GLESShader.h */,
+				B3EE12F81DEC5559009A4A32 /* GLESShader.hpp */,
+				B39C2FF61DED85ED003A3859 /* VertextShader.hpp */,
+				B39C2FF91DED8638003A3859 /* FragmentShader.hpp */,
 			);
 			path = Shader;
 			sourceTree = "<group>";
@@ -483,9 +481,7 @@
 			files = (
 				B3EE126A1DEC1BE4009A4A32 /* LaunchScreen.storyboard in Resources */,
 				B3EE12671DEC1BE4009A4A32 /* Assets.xcassets in Resources */,
-				B3EE12FC1DEC557D009A4A32 /* TextureShader.frag in Resources */,
 				B3EE12651DEC1BE4009A4A32 /* Main.storyboard in Resources */,
-				B3EE12FD1DEC557D009A4A32 /* TextureShader.vert in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -663,7 +659,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				DEVELOPMENT_TEAM = S8NDN9759A;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
 				INFOPLIST_FILE = XYZGameEngine/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cocos.demo.xyz.XYZGameEngine;
@@ -675,7 +673,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				DEVELOPMENT_TEAM = S8NDN9759A;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
 				INFOPLIST_FILE = XYZGameEngine/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cocos.demo.xyz.XYZGameEngine;

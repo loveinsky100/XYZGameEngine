@@ -11,7 +11,7 @@
 
 #include <stdio.h>
 #include <OpenGLES/ES2/gl.h>
-#include "GLESShader.h"
+#include "GLESShader.hpp"
 #include "Object.hpp"
 
 using namespace std;
