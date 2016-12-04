@@ -19,22 +19,20 @@ namespace XYZGame
 {
     class Mesh : public Conponent
     {
-    private:
-        strong Array *meshs; // GLESMesh *;
+        RetainProtectedProperty(Array *, meshes, Meshes);
         
+    private:
         void draw();
+        
     public:
         CreateInit(Mesh);
+        void start();
+        void update();
         
-        virtual void dealloc();
-        void render();
-        
-        virtual void start();
-        virtual void update();
     protected:
+        virtual void dealloc();
         virtual GLESProgram *sharedProgram();
-        void addMesh(GLESMesh *mesh);
-        
+        virtual Array *genGLESMeshes();
     };
 }
 

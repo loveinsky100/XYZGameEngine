@@ -14,35 +14,7 @@
 #include <string>
 #include <list>
 #include "Locker.h"
-
-#define CreateInit(ObjectClass) \
-virtual bool init(); \
-static ObjectClass *create() \
-{ \
-    ObjectClass *object = new ObjectClass(); \
-    if(!object -> init()) \
-    { \
-        delete object; \
-        object = nullptr; \
-    } \
-    else \
-    { \
-        object -> autorelease(); \
-    } \
-     \
-    return object; \
-}
-
-#define weak
-#define strong
-#define assign
-
-#define Release(ptr) \
-if(ptr != nullptr) \
-{ \
-    ptr->release(); \
-    ptr = nullptr; \
-}
+#include "ObjectDefinition.h"
 
 namespace XYZGame
 {
@@ -52,7 +24,13 @@ namespace XYZGame
         int retainCount;
         bool isDestory;
         Mutex lock;
+    
+    protected:
+        void _autorelease();
+        void _retain();
+        virtual void dealloc();
         
+        friend class ReleasePool;
     public:
         Object();
         ~Object();
@@ -60,11 +38,7 @@ namespace XYZGame
         CreateInit(Object)
         
         void release();
-        Object *autorelease();
-        Object *retain();
         int getRetainCount();
-        
-        virtual void dealloc();
     };
 }
 

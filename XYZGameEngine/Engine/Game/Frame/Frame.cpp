@@ -47,5 +47,13 @@ void Frame::update()
 
 void Frame::draw()
 {
-    
+    if(this->rootScene != nullptr)
+    {
+        this->rootScene->draw();
+    }
+}
+
+void Frame::setRootScene(Scene *scene)
+{
+    this->rootScene = scene->retain();
 }

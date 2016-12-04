@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "XYZGameEngineView.h"
 
 @interface ViewController ()
 
@@ -16,7 +17,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    XYZGameEngineView *gameView = [[XYZGameEngineView alloc] initWithFrame:self.view.bounds];
+    gameView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    
+    [self.view addSubview:gameView];
 }
 
 

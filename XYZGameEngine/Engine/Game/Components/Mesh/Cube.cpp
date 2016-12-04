@@ -18,13 +18,14 @@ bool Cube::init()
 
 void Cube::dealloc()
 {
-    Release(this->drawMesh);
+    Mesh::dealloc();
 }
 
-void Cube::start()
+Array *Cube::genGLESMeshes()
 {
+    Array *meshes = Array::create();
     Size screenSize = Frame::sharedFrame()->currentSize();
-    GLfloat cubeWidth = screenSize.width / 4;
+    GLfloat cubeWidth = 1;
     static GLfloat vertices[] = {
         cubeWidth/ 2.f, cubeWidth / 2.f, -cubeWidth / 2.f,
         cubeWidth / 2.f, cubeWidth / 2.f, -3.f / 2.f * cubeWidth,
@@ -40,14 +41,15 @@ void Cube::start()
     };
     
     GLESMesh *vertexMesh = GLESMesh::create();
-    vertexMesh->size = 3;
-    vertexMesh->type = GL_FLOAT;
-    vertexMesh->normalized = GL_FALSE;
-    vertexMesh->stride = 0;
-    vertexMesh->ptr = 0;
-    
+    vertexMesh->setSize(3);
+    vertexMesh->setType(GL_FLOAT);
+    vertexMesh->setNormalized(GL_FALSE);
+    vertexMesh->setStride(0);
+    vertexMesh->setPtr(0);
+    vertexMesh->setName("vPosition");
+
     vertexMesh->genBuffer(GL_ARRAY_BUFFER, 24 * sizeof(GLfloat), vertices, GL_STATIC_DRAW);
-    this->addMesh(vertexMesh);
+    meshes->add(vertexMesh);
     
     static GLubyte indices[] = {
         0, 1, 2,
@@ -69,14 +71,15 @@ void Cube::start()
         3, 5, 4
     };
     
-    this->drawMesh = GLESMesh::create();
-    this->drawMesh->retain();
-    this->drawMesh->genBuffer(GL_ELEMENT_ARRAY_BUFFER, 36 * sizeof(GLubyte), indices, GL_STATIC_DRAW);
-}
-
-void Cube::update()
-{
-    Mesh::update();
-    this->drawMesh->bind();
-    glDrawElements(GL_TRIANGLES, 36, GL_UNSIGNED_BYTE, 0);
+    GLESMesh *drawMesh = GLESMesh::create();
+    drawMesh->genBuffer(GL_ELEMENT_ARRAY_BUFFER, 36 * sizeof(GLubyte), indices, GL_STATIC_DRAW);
+    drawMesh->setIsElement(GL_TRUE);
+    drawMesh->setShouldDraw(GL_TRUE);
+    drawMesh->setDrawType(GL_TRIANGLES);
+    drawMesh->setDrawCount(36);
+    drawMesh->setDrawValueType(GL_UNSIGNED_BYTE);
+    drawMesh->setDrawPtr(0);
+    
+    meshes->add(drawMesh);
+    return meshes;
 }

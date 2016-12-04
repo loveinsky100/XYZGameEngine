@@ -10,6 +10,11 @@
 
 using namespace XYZGame;
 
+Array::~Array()
+{
+    
+}
+
 void Array::dealloc()
 {
     this->removeAll();
@@ -246,4 +251,24 @@ int Array::count()
 {
     Locker l(lock);
     return this->size;
+}
+
+Object *Array::firstObject()
+{
+    if(this->first == nullptr)
+    {
+        return nullptr;
+    }
+    
+    return this->first->object;
+}
+
+Object *Array::lastObject()
+{
+    if(this->last == nullptr)
+    {
+        return nullptr;
+    }
+    
+    return this->last->object;
 }

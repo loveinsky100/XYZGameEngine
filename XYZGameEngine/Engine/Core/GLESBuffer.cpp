@@ -21,11 +21,14 @@ bool GLESBuffer::init()
     return true;
 }
 
-void GLESBuffer::setupBuffer()
+void GLESBuffer::setupRenderBuffer()
 {
     glGenRenderbuffers(1, &renderBuffer);
     glBindRenderbuffer(GL_RENDERBUFFER, renderBuffer);
-    
+}
+
+void GLESBuffer::setupFrameBuffer()
+{
     glGenFramebuffers(1, &frameBuffer);
     glBindFramebuffer(GL_FRAMEBUFFER, frameBuffer);
     
@@ -87,4 +90,9 @@ void GLESBuffer::destoryBuffer()
 void GLESBuffer::bindFrameBuffer()
 {
     glBindFramebuffer(GL_FRAMEBUFFER, frameBuffer);
+}
+
+void GLESBuffer::bindRenderBuffer()
+{
+    glBindRenderbuffer(GL_RENDERBUFFER, renderBuffer);
 }

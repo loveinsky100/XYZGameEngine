@@ -17,17 +17,19 @@ namespace XYZGame
 {
     class GLESBuffer : public Object
     {
-    private:
-        assign GLuint renderBuffer;
-        assign GLuint frameBuffer;
-        assign GLuint stencilDeepthBuffer;
+        AssignProtectedProperty(GLuint, renderBuffer, RenderBuffer);
+        AssignProtectedProperty(GLuint, frameBuffer, FrameBuffer);
+        AssignProtectedProperty(GLuint, stencilDeepthBuffer, StencilDeepthBuffer);
         
     public:
         GLESBuffer();
         CreateInit(GLESBuffer);
-        void setupBuffer();
+        
+        void setupRenderBuffer();
+        void setupFrameBuffer();
         void destoryBuffer();
         
+        void bindRenderBuffer();
         void bindFrameBuffer();
     };
 }

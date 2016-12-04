@@ -18,19 +18,31 @@ namespace XYZGame
 {
     class GLESMesh : public Object
     {
-    public:
-        assign GLint size;
-        assign GLenum type;
-        assign GLboolean normalized;
-        assign GLsizei stride;
-        assign GLvoid* ptr;
-        
-    private:
-        assign GLuint buffer;
-        assign string name;
-        
-        weak GLESProgram *program;
+        // 分类element必须设置参数
+        AssignWriteOnlyProperty(GLint, size, Size);
+        AssignWriteOnlyProperty(GLenum, type, Type);
+        AssignWriteOnlyProperty(GLboolean, normalized, Normalized);
+        AssignWriteOnlyProperty(GLsizei, stride, Stride);
+        AssignWriteOnlyProperty(GLvoid *, ptr, Ptr);
 
+        AssignReadOnlyProperty(GLuint, buffer, Buffer);
+        AssignWriteOnlyProperty(string, name, Name);
+        AssignWriteOnlyProperty(GLESProgram *, program, Program);
+        
+        // 绘制，如果不绘制不需要赋值，或者为false，默认为false
+        AssignWriteOnlyProperty(GLboolean, isElement, IsElement);
+        AssignProperty(GLboolean, shouldDraw, ShouldDraw);
+        AssignWriteOnlyProperty(GLenum, drawType, DrawType);
+        
+        // element必须设置参数
+        AssignWriteOnlyProperty(GLuint, drawCount, DrawCount);
+        AssignWriteOnlyProperty(GLenum, drawValueType, DrawValueType);
+        AssignWriteOnlyProperty(GLvoid *, drawPtr, DrawPtr);
+        
+        // 非element的draw
+        AssignWriteOnlyProperty(GLuint, drawFirst, DrawFirst);
+        AssignWriteOnlyProperty(GLsizei, drawEnd, DrawEnd);
+        
     public:
         CreateInit(GLESMesh);
         GLuint genBuffer(GLenum target, GLsizeiptr size, const GLvoid* data, GLenum usage);
@@ -39,8 +51,7 @@ namespace XYZGame
         
         void setCurrentProgram(GLESProgram *program);
         
-        void bind();
-        void load();
+        void draw();
     };
 }
 

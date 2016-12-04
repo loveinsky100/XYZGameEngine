@@ -11,6 +11,7 @@
 
 #include <stdio.h>
 #include <OpenGLES/ES2/gl.h>
+#include "Scene.hpp"
 
 namespace XYZGame
 {
@@ -31,6 +32,7 @@ namespace XYZGame
     {
     private:
         Size size;
+        Scene *rootScene;
         
     private:
         Frame();
@@ -41,6 +43,8 @@ namespace XYZGame
         static Frame *sharedFrame();
         Size currentSize();
         void setCurrentSize(Size size);
+        
+        void setRootScene(Scene *scene);
         void update();
         
     };

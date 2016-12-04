@@ -21,16 +21,23 @@ namespace XYZGame
 {
     class GameObject : public Object
     {
-    private:
-        strong Array *conponents;
+        RetainProperty(Array *, conponents, Conponents)
+        RetainReadOnlyProperty(Array *, subGameObjects, SubGameObjects);
+        
+        AssignProtectedProperty(bool, isStart, IsStart);
         
     public:
+        ~GameObject();
         CreateInit(GameObject);
+       
+        void draw();
         
-        virtual void dealloc();
-        virtual void start();
-        virtual void update();
         void addConponent(Conponent *conponent);
+        void addGameObject(GameObject *gameObject);
+
+    protected:
+        virtual void dealloc();
+        void drawGameObject();
     };
 }
 

@@ -16,8 +16,8 @@ namespace XYZGame
 
     attribute vec4 vPosition;
 
-    uniform mat4 modelView;
-    uniform mat4 projection;
+//    uniform mat4 modelView;
+//    uniform mat4 projection;
 
     // 光照参数
     //uniform mat3 normalMatrix;
@@ -31,7 +31,8 @@ namespace XYZGame
 
     void main(void)
     {
-        gl_Position = projection * modelView * vPosition;
+//        gl_Position = projection * modelView * vPosition;
+        gl_Position = vPosition;
 
         //    vec3 N = normalMatrix * normalize(vNormal);
         //    vec3 L = normalize(vLightPosition);

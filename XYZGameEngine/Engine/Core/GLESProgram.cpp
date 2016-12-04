@@ -18,15 +18,15 @@ bool GLESProgram::init()
 
 void GLESProgram::loadVertexShader(string shader)
 {
-    this->loadShader(shader, GL_VERTEX_SHADER);
+    this->vertexShaderId = this->loadShader(shader, GL_VERTEX_SHADER);
 }
 
 void GLESProgram::loadFragmentShader(string shader)
 {
-    this->loadShader(shader, GL_FRAGMENT_SHADER);
+    this->fragmentShaderId = this->loadShader(shader, GL_FRAGMENT_SHADER);
 }
 
-void GLESProgram::loadShader(string shader, GLenum shaderType)
+GLuint GLESProgram::loadShader(string shader, GLenum shaderType)
 {
     GLuint shaderId = glCreateShader(shaderType);
     const char *shaderStringUTF8 = shader.c_str();
@@ -51,7 +51,10 @@ void GLESProgram::loadShader(string shader, GLenum shaderType)
         }
         
         glDeleteShader(shaderId);
+        shaderId = 0;
     }
+    
+    return shaderId;
 }
 
 void GLESProgram::link()

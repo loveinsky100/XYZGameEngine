@@ -11,5 +11,25 @@
 
 #include <stdio.h>
 #include "GameObject.hpp"
+#include "Array.hpp"
+
+namespace XYZGame
+{
+    class Scene : public Object
+    {
+        RetainReadOnlyProperty(GameObject *, gameObject, GameObject)
+        RetainReadOnlyProperty(Array *, subScenes, SubScenes);
+        
+    public:
+        
+        CreateInit(Scene);
+        void addSubScene(Scene *scene);
+        
+        void draw();
+        
+    protected:
+        virtual void dealloc();
+    };
+}
 
 #endif /* Scene_hpp */

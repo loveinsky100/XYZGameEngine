@@ -12,47 +12,36 @@ using namespace XYZGame;
 
 void Mesh::dealloc()
 {
-    Release(this->meshs);
+    Release(this->meshes);
 }
 
 bool Mesh::init()
 {
-    this->meshs = Array::create();
-    this->meshs->retain();
-    
     return Conponent::init();
 }
 
 void Mesh::start()
 {
-    
+    this->setMeshes(this->genGLESMeshes());
 }
 
 void Mesh::update()
 {
-    
+    this->draw();
+}
+
+Array * Mesh::genGLESMeshes()
+{
+    return Array::create()->autorelease();
 }
 
 void Mesh::draw()
 {
-    this->meshs->enumerate([&](Object *object, int index){
+    this->meshes->enumerate([&](Object *object, int index){
         GLESMesh *mesh = (GLESMesh *)object;
-        mesh->bind();
-        mesh->load();
+        mesh->setProgram(this->sharedProgram());
+        mesh->draw();
     });
-}
-
-void Mesh::render()
-{
-    this->meshs->enumerate([&](Object *object, int index){
-        GLESMesh *mesh = (GLESMesh *)object;
-        mesh->load();
-    });
-}
-
-void Mesh::addMesh(GLESMesh *mesh)
-{
-    this->meshs->add(mesh);
 }
 
 GLESProgram *Mesh::sharedProgram()
@@ -60,10 +49,10 @@ GLESProgram *Mesh::sharedProgram()
     static GLESProgram *defaultProgram = nullptr;
     if(defaultProgram == nullptr)
     {
-        defaultProgram = GLESProgram::create();
-        defaultProgram->retain();
+        defaultProgram = GLESProgram::create()->retain();
         defaultProgram->loadVertexShader(string(TextureShader_vert));
         defaultProgram->loadFragmentShader(string(TextureShader_frag));
+        defaultProgram->link();
     }
     
     return defaultProgram;

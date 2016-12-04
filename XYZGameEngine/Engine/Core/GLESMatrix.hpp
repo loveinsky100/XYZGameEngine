@@ -18,8 +18,8 @@ namespace XYZGame
 {
     class GLESMatrix : public Object
     {
-    private:
-        weak GLESProgram *program;
+        AssignProperty(GLESProgram *, program, Program)
+
     public:
         CreateInit(GLESMatrix);
         

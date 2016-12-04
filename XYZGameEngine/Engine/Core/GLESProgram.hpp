@@ -25,7 +25,7 @@ namespace XYZGame
         GLuint vertexShaderId;
         GLuint fragmentShaderId;
         
-        void loadShader(string shader, GLenum shaderType);
+        GLuint loadShader(string shader, GLenum shaderType);
     public:
         
         CreateInit(GLESProgram);

@@ -8,36 +8,74 @@
 
 #include "GameObject.hpp"
 #include <OpenGLES/ES2/gl.h>
+#include "Cube.hpp"
 
 using namespace XYZGame;
+
+GameObject::~GameObject()
+{
+    
+}
 
 void GameObject::dealloc()
 {
     Release(this->conponents);
+    Release(this->subGameObjects);
 }
 
 bool GameObject::init()
 {
-    this->conponents = Array::create();
+    this->addConponent(Cube::create());
     return true;
 }
 
-void GameObject::start()
+void GameObject::draw()
 {
-    this->conponents->enumerate([&](Object *object, int index){
-        Conponent *conponent = (Conponent *)object;
-        conponent->start();
-    });
+    this->drawGameObject();
 }
 
-void GameObject::update()
+void GameObject::addGameObject(GameObject *gameObject)
 {
-    glClearColor(0, 0, 0, 1);
-    glClearStencil(0);
-    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
+    if(this->getSubGameObjects() == nullptr)
+    {
+        this->setSubGameObjects(Array::create());
+    }
     
-    this->conponents->enumerate([&](Object *object, int index){
-        Conponent *conponent = (Conponent *)object;
-        conponent->update();
-    });
+    this->getSubGameObjects()->add(gameObject);
+}
+
+void GameObject::addConponent(Conponent *conponent)
+{
+    if(this->getConponents() == nullptr)
+    {
+        this->setConponents(Array::create());
+    }
+    
+    this->getConponents()->add(conponent);
+}
+
+void GameObject::drawGameObject()
+{
+    if(this->conponents != nullptr)
+    {
+        this->conponents->enumerate([&](Object *object, int index){
+            Conponent *conponent = (Conponent *)object;
+            if(!this->isStart)
+            {
+                conponent->start();
+            }
+            
+            conponent->update();
+        });
+    }
+
+    if(this->subGameObjects != nullptr)
+    {
+        this->subGameObjects->enumerate([&](Object *object, int index){
+            GameObject *gameObject = (GameObject *)object;
+            gameObject->drawGameObject();
+        });
+    }
+    
+    this->isStart = true;
 }

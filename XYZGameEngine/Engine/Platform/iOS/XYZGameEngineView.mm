@@ -9,6 +9,8 @@
 #import "XYZGameEngineView.h"
 #import <OpenGLES/ES2/gl.h>
 #import "Frame.hpp"
+#import "GLESBuffer.hpp"
+#import "GameDelegate.hpp"
 
 @interface XYZGameEngineView()
 @property (nonatomic, strong) CADisplayLink *displayLink;
@@ -19,15 +21,14 @@
 @end
 
 @implementation XYZGameEngineView
+{
+    XYZGame::GLESBuffer *buffer;
+    XYZGame::GameDelegate *delegate;
+}
 
 + (Class)layerClass
 {
     return [CAEAGLLayer class];
-}
-
-- (void)dealloc
-{
-    
 }
 
 - (instancetype)initWithFrame:(CGRect)frame
@@ -39,6 +40,13 @@
         
         self.displayLink = [CADisplayLink displayLinkWithTarget:self
                                                        selector:@selector(update)];
+        
+        buffer = XYZGame::GLESBuffer::create()->retain();
+        delegate = new XYZGame::XYZGameDelegate();
+        delegate->gameViewDidLoad(XYZGame::Frame::sharedFrame());
+        
+        [self.displayLink addToRunLoop:[NSRunLoop mainRunLoop]
+                               forMode:NSRunLoopCommonModes];
     }
     
     return self;
@@ -58,12 +66,20 @@
 {
     [super layoutSubviews];
     XYZGame::Frame::sharedFrame()->setCurrentSize(XYZGame::Size(self.bounds.size.width, self.bounds.size.height));
+    buffer->destoryBuffer();
+    buffer->setupRenderBuffer();
+    [self.context renderbufferStorage:GL_RENDERBUFFER
+                         fromDrawable:(CAEAGLLayer *)self.layer];
+    buffer->setupFrameBuffer();
+    buffer->bindRenderBuffer();
+    buffer->bindFrameBuffer();
 }
 
 - (void)draw
 {
-    glClearColor(1, 0, 0, 1);
-    glClear(GL_COLOR_BUFFER_BIT);
+    glClearColor(1, 0, 1, 1);
+    glClear(GL_COLOR_BUFFER_BIT | GL_STENCIL_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    glViewport(0, 0, self.bounds.size.width, self.bounds.size.height);
 }
 
 - (void)commit
@@ -73,7 +89,10 @@
 
 - (void)update
 {
+    [self draw];
     XYZGame::Frame::sharedFrame()->update();
+    
+    [self commit];
 }
 
 @end

@@ -45,18 +45,16 @@ void Object::release()
     }
 }
 
-Object *Object::autorelease()
+void Object::_autorelease()
 {
     Locker l(lock);
     ReleasePool::sharedReleasePool()->addAutoRelease(this);
-    return this;
 }
 
-Object *Object::retain()
+void Object::_retain()
 {
     Locker l(lock);
     this->retainCount ++;
-    return this;
 }
 
 int Object::getRetainCount()

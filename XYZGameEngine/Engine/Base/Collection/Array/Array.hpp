@@ -43,6 +43,7 @@ namespace XYZGame
         void remove(ArrayNode *node);
         
     public:
+        ~Array();
         CreateInit(Array);
         void add(Object *object);
         void insert(int index, Object *object);
@@ -56,10 +57,13 @@ namespace XYZGame
         void enumerate(ArrayEnunmerateFunc func);
         
         Object *objectAt(int index);
-        
-        virtual void dealloc();
+        Object *firstObject();
+        Object *lastObject();
         
         int count();
+        
+    protected:
+        virtual void dealloc();
     };
 }
 

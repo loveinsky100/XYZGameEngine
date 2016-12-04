@@ -18,9 +18,9 @@ namespace XYZGame
 {
     class GLESTexture : public Object
     {
-    private:
-        assign GLuint textureId;
-        weak GLESProgram *program;
+        AssignProperty(GLuint, textureId, TextureId);
+        AssignProperty(GLESProgram *, program, Program);
+
     public:
         CreateInit(GLESTexture);
 //        void setCurrentProgram();

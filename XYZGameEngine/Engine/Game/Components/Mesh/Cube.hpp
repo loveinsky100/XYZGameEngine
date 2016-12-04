@@ -16,14 +16,12 @@ namespace XYZGame
 {
     class Cube : public Mesh
     {
-    private:
-        strong GLESMesh *drawMesh;
-        
     public:
         CreateInit(Cube);
+        
+    protected:
         virtual void dealloc();
-        virtual void start();
-        virtual void update();
+        virtual Array *genGLESMeshes();
     };
 }
 
