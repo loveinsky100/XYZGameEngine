@@ -35,7 +35,7 @@
 		B3EE135E1DED568F009A4A32 /* GLESLighting.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3EE135C1DED568F009A4A32 /* GLESLighting.cpp */; };
 		B3EE13621DED5AFF009A4A32 /* GLESMath.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3EE13611DED5AFF009A4A32 /* GLESMath.cpp */; };
 		B3EE13651DED5F3C009A4A32 /* GLESMatrix.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3EE13631DED5F3C009A4A32 /* GLESMatrix.cpp */; };
-		B3EE13681DED6A42009A4A32 /* SkyBoxMesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3EE13661DED6A42009A4A32 /* SkyBoxMesh.cpp */; };
+		B3EE13681DED6A42009A4A32 /* SkyBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3EE13661DED6A42009A4A32 /* SkyBox.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,8 +108,8 @@
 		B3EE13611DED5AFF009A4A32 /* GLESMath.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GLESMath.cpp; sourceTree = "<group>"; };
 		B3EE13631DED5F3C009A4A32 /* GLESMatrix.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GLESMatrix.cpp; sourceTree = "<group>"; };
 		B3EE13641DED5F3C009A4A32 /* GLESMatrix.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = GLESMatrix.hpp; sourceTree = "<group>"; };
-		B3EE13661DED6A42009A4A32 /* SkyBoxMesh.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SkyBoxMesh.cpp; sourceTree = "<group>"; };
-		B3EE13671DED6A42009A4A32 /* SkyBoxMesh.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = SkyBoxMesh.hpp; sourceTree = "<group>"; };
+		B3EE13661DED6A42009A4A32 /* SkyBox.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SkyBox.cpp; sourceTree = "<group>"; };
+		B3EE13671DED6A42009A4A32 /* SkyBox.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = SkyBox.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -324,8 +324,8 @@
 				B3EE13351DEC7172009A4A32 /* Mesh.hpp */,
 				B3EE13531DED49C6009A4A32 /* Cube.cpp */,
 				B3EE13541DED49C6009A4A32 /* Cube.hpp */,
-				B3EE13661DED6A42009A4A32 /* SkyBoxMesh.cpp */,
-				B3EE13671DED6A42009A4A32 /* SkyBoxMesh.hpp */,
+				B3EE13661DED6A42009A4A32 /* SkyBox.cpp */,
+				B3EE13671DED6A42009A4A32 /* SkyBox.hpp */,
 			);
 			path = Mesh;
 			sourceTree = "<group>";
@@ -512,7 +512,7 @@
 				B3EE13551DED49C6009A4A32 /* Cube.cpp in Sources */,
 				B3EE134C1DEC8340009A4A32 /* Dictionary.cpp in Sources */,
 				B3EE135E1DED568F009A4A32 /* GLESLighting.cpp in Sources */,
-				B3EE13681DED6A42009A4A32 /* SkyBoxMesh.cpp in Sources */,
+				B3EE13681DED6A42009A4A32 /* SkyBox.cpp in Sources */,
 				B3EE12621DEC1BE4009A4A32 /* ViewController.m in Sources */,
 				B3EE13581DED503B009A4A32 /* GLESMesh.cpp in Sources */,
 				B3EE130B1DEC59BE009A4A32 /* XYZGameEngineView.mm in Sources */,
