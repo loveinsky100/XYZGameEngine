@@ -15,11 +15,6 @@ bool GLESMatrix::init()
     return true;
 }
 
-void GLESMatrix::setCurrentProgram(GLESProgram *program)
-{
-    this->program = program;
-}
-
 void GLESMatrix::loadModel(Matrix4 model)
 {
     if(this->program == nullptr)
@@ -27,7 +22,7 @@ void GLESMatrix::loadModel(Matrix4 model)
         return;
     }
     
-    GLuint modelViewHandle = this->program->attributeIndex("modelView");
+    GLuint modelViewHandle = this->program->uniformIndex("modelView");
     glUniformMatrix4fv(modelViewHandle, 1, GL_FALSE, (GLfloat*)&model.m[0][0]);
 }
 
@@ -38,6 +33,6 @@ void GLESMatrix::loadProjection(Matrix4 projection)
         return;
     }
     
-    GLuint projectionHandle = this->program->attributeIndex("projection");
+    GLuint projectionHandle = this->program->uniformIndex("projection");
     glUniformMatrix4fv(projectionHandle, 1, GL_FALSE, (GLfloat*)&projection.m[0][0]);
 }

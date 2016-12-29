@@ -7,3 +7,6 @@
 //
 
 #include "Dictionary.hpp"
+
+using namespace XYZGame;
+

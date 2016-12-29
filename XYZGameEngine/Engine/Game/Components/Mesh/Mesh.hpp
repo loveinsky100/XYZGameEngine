@@ -31,7 +31,6 @@ namespace XYZGame
         
     protected:
         virtual void dealloc();
-        virtual GLESProgram *sharedProgram();
         virtual Array *genGLESMeshes();
     };
 }

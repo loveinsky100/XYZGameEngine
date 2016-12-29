@@ -27,7 +27,6 @@ namespace XYZGame
 
         AssignReadOnlyProperty(GLuint, buffer, Buffer);
         AssignWriteOnlyProperty(string, name, Name);
-        AssignWriteOnlyProperty(GLESProgram *, program, Program);
         
         // 绘制，如果不绘制不需要赋值，或者为false，默认为false
         AssignWriteOnlyProperty(GLboolean, isElement, IsElement);
@@ -43,15 +42,18 @@ namespace XYZGame
         AssignWriteOnlyProperty(GLuint, drawFirst, DrawFirst);
         AssignWriteOnlyProperty(GLsizei, drawEnd, DrawEnd);
         
+        
+        AssignWriteOnlyProperty(GLESProgram *, program, CurrentProgram)
     public:
         CreateInit(GLESMesh);
         GLuint genBuffer(GLenum target, GLsizeiptr size, const GLvoid* data, GLenum usage);
         
         void destoryBuffer();
         
-        void setCurrentProgram(GLESProgram *program);
-        
         void draw();
+        
+    protected:
+        virtual void dealloc();
     };
 }
 

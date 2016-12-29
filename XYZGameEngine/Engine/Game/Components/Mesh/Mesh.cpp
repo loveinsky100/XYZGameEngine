@@ -27,6 +27,7 @@ void Mesh::start()
 
 void Mesh::update()
 {
+    Conponent::update();
     this->draw();
 }
 
@@ -39,21 +40,7 @@ void Mesh::draw()
 {
     this->meshes->enumerate([&](Object *object, int index){
         GLESMesh *mesh = (GLESMesh *)object;
-        mesh->setProgram(this->sharedProgram());
+        mesh->setCurrentProgram(this->getCurrentProgram());
         mesh->draw();
     });
-}
-
-GLESProgram *Mesh::sharedProgram()
-{
-    static GLESProgram *defaultProgram = nullptr;
-    if(defaultProgram == nullptr)
-    {
-        defaultProgram = GLESProgram::create()->retain();
-        defaultProgram->loadVertexShader(string(TextureShader_vert));
-        defaultProgram->loadFragmentShader(string(TextureShader_frag));
-        defaultProgram->link();
-    }
-    
-    return defaultProgram;
 }

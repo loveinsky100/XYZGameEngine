@@ -27,17 +27,17 @@ Array *Cube::genGLESMeshes()
     Size screenSize = Frame::sharedFrame()->currentSize();
     GLfloat cubeWidth = 1;
     static GLfloat vertices[] = {
-        cubeWidth/ 2.f, cubeWidth / 2.f, -cubeWidth / 2.f,
-        cubeWidth / 2.f, cubeWidth / 2.f, -3.f / 2.f * cubeWidth,
+        cubeWidth/ 2.f, cubeWidth / 2.f, cubeWidth / 2.f,
+        cubeWidth / 2.f, cubeWidth / 2.f, -cubeWidth / 2.f,
         
-        -1.f / 2.f * cubeWidth, 1.f / 2.f * cubeWidth, -1.f / 2.f * cubeWidth,
-        -1.f / 2.f * cubeWidth, 1.f / 2.f * cubeWidth, -2.f / 2.f * cubeWidth,
+        -1.f / 2.f * cubeWidth, 1.f / 2.f * cubeWidth, cubeWidth / 2.f,
+        -1.f / 2.f * cubeWidth, 1.f / 2.f * cubeWidth, -cubeWidth / 2.f,
         
-        -1.f / 2.f * cubeWidth, -1.f / 2.f * cubeWidth, -1.f / 2.f * cubeWidth,
-        -1.f / 2.f, -1.f / 2.f, -3.f / 2.f,
+        -1.f / 2.f * cubeWidth, -1.f / 2.f * cubeWidth, cubeWidth / 2.f,
+        -1.f / 2.f * cubeWidth, -1.f / 2.f * cubeWidth, -cubeWidth / 2.f,
         
-        1.f / 2.f * cubeWidth, -1.f / 2.f * cubeWidth, -1.f / 2.f * cubeWidth,
-        1.f / 2.f * cubeWidth, -1.f / 2.f * cubeWidth, -3.f / 2.f * cubeWidth
+        1.f / 2.f * cubeWidth, -1.f / 2.f * cubeWidth, cubeWidth / 2.f,
+        1.f / 2.f * cubeWidth, -1.f / 2.f * cubeWidth, -cubeWidth / 2.f
     };
     
     GLESMesh *vertexMesh = GLESMesh::create();

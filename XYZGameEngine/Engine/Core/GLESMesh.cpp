@@ -16,6 +16,12 @@ bool GLESMesh::init()
     return true;
 }
 
+void GLESMesh::dealloc()
+{
+    Object::dealloc();
+    this->destoryBuffer();
+}
+
 GLuint GLESMesh::genBuffer(GLenum target, GLsizeiptr size, const GLvoid* data, GLenum usage)
 {
     GLuint buffer;
@@ -31,11 +37,6 @@ void GLESMesh::destoryBuffer()
 {
     glDeleteBuffers(1, &buffer);
     this->buffer = 0;
-}
-
-void GLESMesh::setCurrentProgram(GLESProgram *program)
-{
-    this->program = program;
 }
 
 void GLESMesh::draw()

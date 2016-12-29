@@ -18,12 +18,10 @@ namespace XYZGame
 {
     class GLESMatrix : public Object
     {
-        AssignProperty(GLESProgram *, program, Program)
+        AssignWriteOnlyProperty(GLESProgram *, program, CurrentProgram)
 
     public:
         CreateInit(GLESMatrix);
-        
-        void setCurrentProgram(GLESProgram *program);
         
         void loadModel(Matrix4 model);
         void loadProjection(Matrix4 projection);

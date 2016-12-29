@@ -11,6 +11,24 @@
 
 namespace XYZGame
 {
+    template<typename T , typename TBase> class TIsDerived
+    {
+    public:
+        static int t(TBase* base)
+        {
+            return 1;
+        }
+        static  char t(void* t2)
+        {
+            return 0;
+        }
+        
+        enum
+        {
+            Result = ( sizeof(int) == sizeof(t( (T*)NULL) )  ),
+        };
+    };
+    
 #define CreateInit(ObjectClass) \
 virtual bool init(); \
 static ObjectClass *create() \
@@ -37,6 +55,14 @@ ObjectClass *retain() \
 { \
 this->_retain(); \
 return this; \
+} \
+template<typename T> bool isKindOfClass() \
+{ \
+    return TIsDerived<ObjectClass, T>::Result; \
+} \
+template<typename T> static bool isSubOfClass() \
+{ \
+return TIsDerived<ObjectClass, T>::Result; \
 }
     
     
@@ -119,7 +145,7 @@ Type name; \
 RetainPropertySetter(Type, name, Name) \
 PropertyGetter(Type, name, Name)
     
-#define RetainWriteProperty(Type, name, Name) \
+#define RetainWriteOnlyProperty(Type, name, Name) \
 protected: \
 Type name; \
 PropertyGetter(Type, name, Name) \

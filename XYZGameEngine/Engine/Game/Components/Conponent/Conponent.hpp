@@ -11,19 +11,17 @@
 
 #include <stdio.h>
 #include "Object.hpp"
+#include "GLESProgram.hpp"
 
 namespace XYZGame
 {
     class Conponent : public Object
     {
-    private:
-        bool isEnable;
+        AssignWriteOnlyProperty(GLESProgram *, program, CurrentProgram);
+        AssignProperty(bool, enable, Enable);
         
     public:
         CreateInit(Conponent);
-        
-        void setEnable(bool enable);
-        bool enable();
         
         virtual void start();
         virtual void update();

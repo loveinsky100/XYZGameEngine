@@ -10,25 +10,24 @@
 #define Scene_hpp
 
 #include <stdio.h>
-#include "GameObject.hpp"
+#include "Shape.hpp"
 #include "Array.hpp"
 
 namespace XYZGame
 {
     class Scene : public Object
     {
-        RetainReadOnlyProperty(GameObject *, gameObject, GameObject)
+        RetainReadOnlyProperty(Shape *, shape, Shape)
         RetainReadOnlyProperty(Array *, subScenes, SubScenes);
-        
+        AssignReadOnlyProperty(long, drawTime, DrawTime)
     public:
-        
         CreateInit(Scene);
         void addSubScene(Scene *scene);
-        
         void draw();
         
     protected:
         virtual void dealloc();
+        virtual void update(long deltaTime);
     };
 }
 

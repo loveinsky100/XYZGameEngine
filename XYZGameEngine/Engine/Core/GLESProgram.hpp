@@ -38,6 +38,9 @@ namespace XYZGame
         
         GLuint attributeIndex(string attributeName);
         GLuint uniformIndex(string uniformName);
+        
+    protected:
+        virtual void dealloc();
     };
 }
 

@@ -10,7 +10,7 @@
 #import <OpenGLES/ES2/gl.h>
 #import "Frame.hpp"
 #import "GLESBuffer.hpp"
-#import "GameDelegate.hpp"
+#import "XYZGameDelegate.hpp"
 
 @interface XYZGameEngineView()
 @property (nonatomic, strong) CADisplayLink *displayLink;
@@ -55,6 +55,7 @@
 - (void)setupContext
 {
     self.context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2];
+    [self.context setMultiThreaded:YES];
 }
 
 - (void)useContext
@@ -79,6 +80,7 @@
 {
     glClearColor(1, 0, 1, 1);
     glClear(GL_COLOR_BUFFER_BIT | GL_STENCIL_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    glEnable(GL_CULL_FACE);
     glViewport(0, 0, self.bounds.size.width, self.bounds.size.height);
 }
 

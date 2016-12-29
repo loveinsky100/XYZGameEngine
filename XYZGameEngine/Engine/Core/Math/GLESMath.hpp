@@ -18,7 +18,7 @@ namespace XYZGame
         GLfloat   m[3][3];
     } Matrix3;
     
-    typedef struct
+    typedef struct _Matrix4
     {
         GLfloat   m[4][4];
     } Matrix4;

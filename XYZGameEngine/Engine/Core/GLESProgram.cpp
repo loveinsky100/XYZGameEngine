@@ -13,7 +13,16 @@ using namespace XYZGame;
 
 bool GLESProgram::init()
 {
+    Object::init();
     return true;
+}
+
+void GLESProgram::dealloc()
+{
+    Object::dealloc();
+    glDeleteShader(this->vertexShaderId);
+    glDeleteShader(this->fragmentShaderId);
+    glDeleteProgram(this->programId);
 }
 
 void GLESProgram::loadVertexShader(string shader)

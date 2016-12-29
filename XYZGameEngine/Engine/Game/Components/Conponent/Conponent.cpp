@@ -16,16 +16,6 @@ bool Conponent::init()
     return true;
 }
 
-void Conponent::setEnable(bool enable)
-{
-    this->isEnable = enable;
-}
-
-bool Conponent::enable()
-{
-    return this->isEnable;
-}
-
 void Conponent::start()
 {
     
@@ -33,5 +23,5 @@ void Conponent::start()
 
 void Conponent::update()
 {
-    
+    this->getCurrentProgram()->use();
 }

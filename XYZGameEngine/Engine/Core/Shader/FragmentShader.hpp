@@ -18,11 +18,11 @@ namespace XYZGame
      
         varying vec2 vTexture;
         uniform sampler2D sTexture;
-     
+        varying vec4 aColor;
         void main()
         {
             //    gl_FragColor = texture2D(sTexture, vTexture);
-            gl_FragColor = vec4(1, 0, 0, 1);
+            gl_FragColor = aColor;
         }
     );
 }

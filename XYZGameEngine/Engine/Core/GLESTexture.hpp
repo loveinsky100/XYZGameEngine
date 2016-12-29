@@ -19,11 +19,10 @@ namespace XYZGame
     class GLESTexture : public Object
     {
         AssignProperty(GLuint, textureId, TextureId);
-        AssignProperty(GLESProgram *, program, Program);
+        AssignWriteOnlyProperty(GLESProgram *, program, CurrentProgram)
 
     public:
         CreateInit(GLESTexture);
-//        void setCurrentProgram();
         void loadTexture();
     };
 }
