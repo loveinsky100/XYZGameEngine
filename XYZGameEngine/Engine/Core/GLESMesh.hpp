@@ -52,6 +52,8 @@ namespace XYZGame
         
         void draw();
         
+        static void clear();
+        
     protected:
         virtual void dealloc();
     };

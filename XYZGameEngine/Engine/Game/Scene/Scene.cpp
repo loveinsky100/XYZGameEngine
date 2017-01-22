@@ -54,18 +54,26 @@ void Scene::draw()
         this->drawTime = tv.tv_sec * 1000 + tv.tv_usec / 1000;
     }
     
+    this->clear();
+    
     struct timeval tv;
     gettimeofday(&tv, NULL);
     long now = tv.tv_sec * 1000 + tv.tv_usec / 1000;
     currentScene->update(now - this->drawTime);
   
-    struct timeval tv2;
-    gettimeofday(&tv2, NULL);
-    this->drawTime = tv2.tv_sec * 1000 + tv2.tv_usec / 1000;
     if(currentScene->getShape() != nullptr)
     {
         currentScene->getShape()->draw();
     }
+    
+    struct timeval tv2;
+    gettimeofday(&tv2, NULL);
+    this->drawTime = tv2.tv_sec * 1000 + tv2.tv_usec / 1000;
+}
+
+void Scene::clear()
+{
+    GLESMesh::clear();
 }
 
 /**

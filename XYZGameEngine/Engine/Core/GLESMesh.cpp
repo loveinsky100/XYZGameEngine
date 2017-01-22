@@ -70,3 +70,15 @@ void GLESMesh::draw()
         glDrawArrays(this->getDrawType(), this->getDrawFirst(), this->getDrawEnd());
     }
 }
+
+void GLESMesh::clear()
+{
+    glClearColor(0, 0, 0, 0);
+    glClear(GL_COLOR_BUFFER_BIT | GL_STENCIL_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    glEnable(GL_CULL_FACE);
+    
+    int width, height;
+    glGetRenderbufferParameteriv(GL_RENDERBUFFER, GL_RENDERBUFFER_WIDTH, &width);
+    glGetRenderbufferParameteriv(GL_RENDERBUFFER, GL_RENDERBUFFER_HEIGHT, &height);
+    glViewport(0, 0, width, height);
+}

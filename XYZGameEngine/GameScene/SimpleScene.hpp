@@ -17,12 +17,7 @@ using namespace XYZGame;
 class SimpleScene : public Scene
 {
     RetainProtectedProperty(Shape *, cube, Cube)
-    RetainProtectedProperty(Shape *, cube1, Cube1)
-    RetainProtectedProperty(Shape *, cube2, Cube2)
-    RetainProtectedProperty(Shape *, cube3, Cube3)
-    RetainProtectedProperty(Shape *, cube4, Cube4)
-    RetainProtectedProperty(Shape *, cube5, Cube5)
-    RetainProtectedProperty(Shape *, cube6, Cube6)
+
 public:
     CreateInit(SimpleScene);
     

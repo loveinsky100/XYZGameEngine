@@ -26,6 +26,7 @@ namespace XYZGame
         void draw();
         
     protected:
+        virtual void clear();
         virtual void dealloc();
         virtual void update(long deltaTime);
     };
