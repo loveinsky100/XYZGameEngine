@@ -14,6 +14,7 @@
 #include "Mesh.hpp"
 #include <list>
 #include "Transform.hpp"
+#include "Program.hpp"
 
 using namespace std;
 
@@ -23,7 +24,7 @@ namespace XYZGame
     {
         RetainProperty(Mesh *, mesh, Mesh)
         RetainProperty(Transform *, transform, Transform)
-        RetainProperty(GLESProgram *, program, program)
+        RetainProperty(Program *, program, Program)
         
         RetainReadOnlyProperty(Array *, subShapes, SubShapes);
         AssignProtectedProperty(bool, isStart, IsStart);
@@ -42,7 +43,6 @@ namespace XYZGame
         
     private:
         void useConponent(Conponent *conponent);
-        GLESProgram *sharedProgram();
     };
 }
 

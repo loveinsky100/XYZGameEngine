@@ -16,7 +16,7 @@ namespace XYZGame
 {
     class Program : public Conponent
     {
-        RetainProtectedProperty(GLESProgram *, program, Program)
+        RetainReadOnlyProperty(GLESProgram *, esProgram, ESProgram)
         AssignProperty(string, vertex, Vertex)
         AssignProperty(string, fragment, Fragment)
     public:

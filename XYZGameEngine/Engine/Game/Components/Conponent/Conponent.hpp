@@ -15,9 +15,10 @@
 
 namespace XYZGame
 {
+    class Program;
     class Conponent : public Object
     {
-        AssignWriteOnlyProperty(GLESProgram *, program, CurrentProgram);
+        AssignWriteOnlyProperty(Program *, program, Program);
         AssignProperty(bool, enable, Enable);
         
     public:

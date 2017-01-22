@@ -7,6 +7,8 @@
 //
 
 #include "Transform.hpp"
+#include "Program.hpp"
+#include "Frame.hpp"
 
 using namespace XYZGame;
 
@@ -42,6 +44,22 @@ void Transform::update()
     GLESMath::Rotate(&modelView, this->rotation.z, 0, 0, 1);
     GLESMath::Translate(&modelView, this->position.x, this->position.y, this->position.z);
     GLESMath::Scale(&modelView, this->scale.x, this->scale.y, this->scale.z);
-    this->matrix->setCurrentProgram(this->getCurrentProgram());
+    this->matrix->setCurrentProgram(this->getProgram()->getESProgram());
     this->matrix->loadModel(modelView);
+    
+    Matrix4 projectionMatrix;
+    GLESMath::MatrixLoadIdentity(&projectionMatrix);
+    
+    GLfloat width = Frame::sharedFrame()->currentSize().width;
+    GLfloat height = Frame::sharedFrame()->currentSize().height;
+    
+    GLESMath::Ortho(&projectionMatrix,
+                    -width / 2,
+                    width / 2,
+                    -height / 2,
+                    height / 2,
+                    -height / 2,
+                    height / 2);
+    
+    this->matrix->loadProjection(projectionMatrix);
 }

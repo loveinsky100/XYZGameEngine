@@ -18,12 +18,11 @@ namespace XYZGame
 {
     class Transform : public Conponent
     {
-        RetainProperty(GLESMatrix *, matrix, Matrix)
-    public:
-        Vec3 position;
-        Vec3 rotation;
-        Vec3 scale;
-        
+        RetainProtectedProperty(GLESMatrix *, matrix, Matrix)
+        AssignProperty(Vec3, position, Position)
+        AssignProperty(Vec3, rotation, Rotation)
+        AssignProperty(Vec3, scale, Scale)
+
     public:
         CreateInit(Transform)
         virtual void start();

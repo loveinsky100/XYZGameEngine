@@ -25,7 +25,7 @@ Array *Cube::genGLESMeshes()
 {
     Array *meshes = Array::create();
     Size screenSize = Frame::sharedFrame()->currentSize();
-    GLfloat cubeWidth = 1;
+    GLfloat cubeWidth = screenSize.width;
     static GLfloat vertices[] = {
         cubeWidth/ 2.f, cubeWidth / 2.f, cubeWidth / 2.f,
         cubeWidth / 2.f, cubeWidth / 2.f, -cubeWidth / 2.f,

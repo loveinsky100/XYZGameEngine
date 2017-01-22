@@ -23,5 +23,5 @@ void Conponent::start()
 
 void Conponent::update()
 {
-    this->getCurrentProgram()->use();
+    
 }

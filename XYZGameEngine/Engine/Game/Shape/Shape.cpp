@@ -26,6 +26,11 @@ void Shape::dealloc()
 
 bool Shape::init()
 {
+    Program *program = Program::create();
+    program->setVertex(string(TextureShader_vert));
+    program->setFragment(string(TextureShader_frag));
+    
+    this->setProgram(program);
     this->setMesh(Cube::create());
     this->setTransform(Transform::create());
     return true;
@@ -59,6 +64,7 @@ void Shape::addShape(Shape *Shape)
  */
 void Shape::drawShape()
 {
+    this->useConponent(this->program);
     this->useConponent(this->mesh);
     this->useConponent(this->transform);
 
@@ -75,9 +81,14 @@ void Shape::drawShape()
 
 void Shape::useConponent(Conponent *conponent)
 {
+    if(conponent != this->program)
+    {
+        conponent->setProgram(this->program);
+    }
+    
     if(conponent != nullptr && conponent->getEnable())
     {
-        conponent->setCurrentProgram(this->sharedProgram());
+        conponent->setProgram(this->getProgram());
         if(!this->isStart)
         {
             conponent->start();
@@ -93,19 +104,4 @@ void Shape::useConponent(Conponent *conponent)
 void Shape::setNeededDraw()
 {
     this->isStart = false;
-}
-
-GLESProgram *Shape::sharedProgram()
-{
-    static GLESProgram *defaultProgram = nullptr;
-    if(defaultProgram == nullptr)
-    {
-        defaultProgram = GLESProgram::create()->retain();
-        defaultProgram->loadVertexShader(string(TextureShader_vert));
-        defaultProgram->loadFragmentShader(string(TextureShader_frag));
-        defaultProgram->link();
-        defaultProgram->use();
-    }
-    
-    return defaultProgram;
 }

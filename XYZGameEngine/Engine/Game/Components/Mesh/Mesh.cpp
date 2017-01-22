@@ -7,6 +7,7 @@
 //
 
 #include "Mesh.hpp"
+#include "Program.hpp"
 
 using namespace XYZGame;
 
@@ -40,7 +41,7 @@ void Mesh::draw()
 {
     this->meshes->enumerate([&](Object *object, int index){
         GLESMesh *mesh = (GLESMesh *)object;
-        mesh->setCurrentProgram(this->getCurrentProgram());
+        mesh->setCurrentProgram(this->getProgram()->getESProgram());
         mesh->draw();
     });
 }

@@ -14,21 +14,19 @@ bool SimpleScene::init()
     this->setCube(Shape::create());
     this->getShape()->addShape(this->getCube());
     
-    this->getCube()->getTransform()->scale = Vec3(0.2, 0.2, 0.2);
-    this->getCube()->getTransform()->position = Vec3(-0.8, -0.8, 0);
+    this->getCube()->getTransform()->setScale(Vec3(0.2, 0.2, 0.2));
+    this->getCube()->getTransform()->setPosition(Vec3(-100, -100, 0));
     
     return true;
 }
 
 void SimpleScene::update(long deltaTime)
 {
-    Vec3 rotation = this->getShape()->getTransform()->rotation;
+    Vec3 rotation = this->getShape()->getTransform()->getRotation();
     rotation.y += deltaTime / 25.f * 2;
-    this->getShape()->getTransform()->rotation = rotation;
-    this->getShape()->getTransform()->scale = Vec3(0.2, 0.2, 0.2);
+    this->getShape()->getTransform()->setRotation(rotation);
+    this->getShape()->getTransform()->setScale(Vec3(0.2, 0.2, 0.2));
     
     rotation.y -= deltaTime / 25.f * 4;
-    this->getCube()->getTransform()->rotation = rotation;
-
-    printf("delta : %ld \n", deltaTime);
+    this->getCube()->getTransform()->setRotation(rotation);
 }

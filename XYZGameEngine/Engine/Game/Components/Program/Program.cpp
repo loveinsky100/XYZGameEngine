@@ -13,7 +13,7 @@ using namespace XYZGame;
 bool Program::init()
 {
     Conponent::init();
-    this->setProgram(GLESProgram::create());
+    this->setESProgram(GLESProgram::create());
     return true;
 }
 
@@ -24,13 +24,13 @@ void Program::dealloc()
 
 void Program::start()
 {
-    this->getProgram()->loadVertexShader(vertex);
-    this->getProgram()->loadFragmentShader(vertex);
-    this->getProgram()->link();
+    this->getESProgram()->loadVertexShader(vertex);
+    this->getESProgram()->loadFragmentShader(fragment);
+    this->getESProgram()->link();
 }
 
 void Program::update()
 {
-    this->getProgram()->use();
+    this->getESProgram()->use();
 }
 
