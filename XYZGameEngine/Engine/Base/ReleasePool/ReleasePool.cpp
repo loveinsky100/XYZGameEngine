@@ -7,14 +7,9 @@
 //
 
 #include "ReleasePool.hpp"
-#include <list>
 #include "Object.hpp"
 
 using namespace XYZGame;
-using namespace std;
-
-static list<Object *> autoReleaseObjects;
-static list<Object *> destoryObjects;
 
 ReleasePool::ReleasePool()
 {

@@ -11,6 +11,9 @@
 
 #include <stdio.h>
 #include "Locker.h"
+#include <list>
+
+using namespace std;
 
 namespace XYZGame
 {
@@ -18,6 +21,8 @@ namespace XYZGame
     class ReleasePool
     {
     private:
+        list<Object *> autoReleaseObjects;
+        list<Object *> destoryObjects;
         Mutex lock;
         ReleasePool();
     public:
