@@ -23,10 +23,10 @@ namespace XYZGame
     public:
         static ReleasePool *sharedReleasePool();
         void autoRelease();
-        void destory();
+        void destroy();
         
         void addAutoRelease(Object *object);
-        void addDestory(Object *object);
+        void addDestroy(Object *object);
     };
 
 }

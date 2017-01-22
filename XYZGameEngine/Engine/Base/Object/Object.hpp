@@ -22,7 +22,7 @@ namespace XYZGame
     {
     private:
         int retainCount;
-        bool isDestory;
+        bool isDestroy;
         Mutex lock;
     
     protected:

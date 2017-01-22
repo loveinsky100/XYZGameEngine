@@ -16,7 +16,7 @@ using namespace std;
 Object::Object()
 {
     this->retainCount = 1;
-    this->isDestory = false;
+    this->isDestroy = false;
 }
 
 Object::~Object()
@@ -38,10 +38,11 @@ void Object::release()
 {
     Locker l(lock);
     this -> retainCount --;
-    if(this->retainCount <= 0 && !this->isDestory)
+    if(this->retainCount <= 0 && !this->isDestroy)
     {
-        this->isDestory = true;
-        delete this;
+        this->isDestroy = true;
+        this->dealloc();
+        ReleasePool::sharedReleasePool()->addDestroy(this);
     }
 }
 

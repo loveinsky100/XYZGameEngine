@@ -42,7 +42,7 @@ void Frame::update()
     this->draw();
     
     ReleasePool::sharedReleasePool()->autoRelease();
-    ReleasePool::sharedReleasePool()->destory();
+    ReleasePool::sharedReleasePool()->destroy();
 }
 
 void Frame::draw()
