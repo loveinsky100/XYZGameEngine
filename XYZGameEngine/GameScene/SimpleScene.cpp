@@ -7,6 +7,7 @@
 //
 
 #include "SimpleScene.hpp"
+#include "File.hpp"
 
 bool SimpleScene::init()
 {
@@ -17,6 +18,10 @@ bool SimpleScene::init()
     this->getCube()->getTransform()->setScale(Vec3(0.2, 0.2, 0.2));
     this->getCube()->getTransform()->setPosition(Vec3(-100, -100, 0));
     
+    // FileTest
+    Data *data = File::read("Info.plist", FilePathType_Bundle);
+
+    printf("%s", data->getBytes());
     return true;
 }
 

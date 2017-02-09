@@ -9,8 +9,11 @@
 #import "XYZGameEngineView.h"
 #import <OpenGLES/ES2/gl.h>
 #import "Frame.hpp"
+#import "File.hpp"
 #import "GLESBuffer.hpp"
 #import "XYZGameDelegate.hpp"
+
+using namespace XYZGame;
 
 @interface XYZGameEngineView()
 @property (nonatomic, strong) CADisplayLink *displayLink;
@@ -22,8 +25,8 @@
 
 @implementation XYZGameEngineView
 {
-    XYZGame::GLESBuffer *buffer;
-    XYZGame::GameDelegate *delegate;
+    GLESBuffer *buffer;
+    GameDelegate *delegate;
 }
 
 + (Class)layerClass
@@ -38,6 +41,16 @@
         [self setupContext];
         [self useContext];
         
+        File::setPath([[NSBundle mainBundle].bundlePath UTF8String], FilePathType_Bundle);
+        
+        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+        NSString *documentsDirectory = [paths objectAtIndex:0];
+        File::setPath([documentsDirectory UTF8String], FilePathType_Document);
+        
+        NSArray *caches = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
+        NSString *cache = [caches objectAtIndex:0];
+        File::setPath([cache UTF8String], FilePathType_Cache);
+        
         self.displayLink = [CADisplayLink displayLinkWithTarget:self
                                                        selector:@selector(update)];
         
@@ -47,9 +60,9 @@
         self.displayLink.frameInterval = 1;
 #endif
         
-        buffer = XYZGame::GLESBuffer::create()->retain();
-        delegate = new XYZGame::XYZGameDelegate();
-        delegate->gameViewDidLoad(XYZGame::Frame::sharedFrame());
+        buffer = GLESBuffer::create()->retain();
+        delegate = new XYZGameDelegate();
+        delegate->gameViewDidLoad(Frame::sharedFrame());
         
         [self.displayLink addToRunLoop:[NSRunLoop mainRunLoop]
                                forMode:NSRunLoopCommonModes];
@@ -72,7 +85,7 @@
 - (void)layoutSubviews
 {
     [super layoutSubviews];
-    XYZGame::Frame::sharedFrame()->setCurrentSize(XYZGame::Size(self.bounds.size.width, self.bounds.size.height));
+    Frame::sharedFrame()->setCurrentSize(XYZGame::Size(self.bounds.size.width, self.bounds.size.height));
     buffer->destoryBuffer();
     buffer->setupRenderBuffer();
     [self.context renderbufferStorage:GL_RENDERBUFFER
@@ -89,7 +102,7 @@
 
 - (void)update
 {
-    XYZGame::Frame::sharedFrame()->update();
+    Frame::sharedFrame()->update();
     [self commit];
 }
 

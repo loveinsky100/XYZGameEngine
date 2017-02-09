@@ -18,12 +18,17 @@ namespace XYZGame
 {
     class GLESTexture : public Object
     {
-        AssignProperty(GLuint, textureId, TextureId);
-        AssignWriteOnlyProperty(GLESProgram *, program, CurrentProgram)
-
+        AssignReadOnlyProperty(GLuint, textureId, TextureId);
+        RetainWriteOnlyProperty(GLESProgram *, program, CurrentProgram)
+//        AssignWriteOnlyProperty(GLboolean, mipMap, MipMap);
+        
     public:
         CreateInit(GLESTexture);
-        void loadTexture();
+        void gen(GLint *imageBytes, GLint width, GLint height);
+        void use(string name, GLenum texture);
+        
+    protected:
+        virtual void dealloc();
     };
 }
 
