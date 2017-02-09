@@ -19,8 +19,25 @@ void Data::dealloc()
         free(this->bytes);
     }
 }
-
 bool Data::init()
 {
     return Object::init();
+}
+
+Data *Data::createWithSize(long size)
+{
+    Data *object = new Data();
+    if(!object -> init())
+    {
+        delete object;
+        object = nullptr;
+    }
+    else
+    {
+        object -> bytes = (char *)malloc(sizeof(char) * size);
+        object -> length = size;
+        object -> autorelease();
+    }
+    
+    return object;
 }

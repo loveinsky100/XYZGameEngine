@@ -12,6 +12,7 @@
 #include <stdio.h>
 #include "Object.hpp"
 #include "GLESTexture.hpp"
+#include "Image.hpp"
 
 namespace XYZGame
 {
@@ -21,7 +22,7 @@ namespace XYZGame
         
     public:
         CreateInit(Texture);
-        void load(string name);
+        void load(Image *image);
     protected:
         virtual void dealloc();
     };

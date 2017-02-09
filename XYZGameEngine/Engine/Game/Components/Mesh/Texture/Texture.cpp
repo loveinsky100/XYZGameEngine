@@ -27,7 +27,7 @@ bool Texture::init()
     return true;
 }
 
-void Texture::load(string name)
+void Texture::load(Image *image)
 {
     
 }

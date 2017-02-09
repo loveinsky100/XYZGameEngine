@@ -13,8 +13,9 @@
 		B3718A861DF54164000CD5B9 /* XYZGameDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3718A841DF54164000CD5B9 /* XYZGameDelegate.cpp */; };
 		B3718A8A1DF5418A000CD5B9 /* SimpleScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3718A881DF5418A000CD5B9 /* SimpleScene.cpp */; };
 		B3718A8E1DF543BE000CD5B9 /* Program.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3718A8C1DF543BE000CD5B9 /* Program.cpp */; };
-		B38581D51E4C122300E4F492 /* File.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B38581D31E4C122300E4F492 /* File.cpp */; };
-		B38581D81E4C124600E4F492 /* Data.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B38581D61E4C124600E4F492 /* Data.cpp */; };
+		B38581E11E4C4B5700E4F492 /* Data.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B38581DB1E4C4B5700E4F492 /* Data.cpp */; };
+		B38581E21E4C4B5700E4F492 /* File.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B38581DE1E4C4B5700E4F492 /* File.cpp */; };
+		B38581E51E4C4B6200E4F492 /* Image.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B38581E31E4C4B6200E4F492 /* Image.cpp */; };
 		B3A70B991DF50F7E00BC0216 /* Shape.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3A70B961DF50F7E00BC0216 /* Shape.cpp */; };
 		B3EE125C1DEC1BE4009A4A32 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B3EE125B1DEC1BE4009A4A32 /* main.m */; };
 		B3EE125F1DEC1BE4009A4A32 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B3EE125E1DEC1BE4009A4A32 /* AppDelegate.m */; };
@@ -67,10 +68,12 @@
 		B3718A891DF5418A000CD5B9 /* SimpleScene.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = SimpleScene.hpp; sourceTree = "<group>"; };
 		B3718A8C1DF543BE000CD5B9 /* Program.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Program.cpp; sourceTree = "<group>"; };
 		B3718A8D1DF543BE000CD5B9 /* Program.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Program.hpp; sourceTree = "<group>"; };
-		B38581D31E4C122300E4F492 /* File.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = File.cpp; sourceTree = "<group>"; };
-		B38581D41E4C122300E4F492 /* File.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = File.hpp; sourceTree = "<group>"; };
-		B38581D61E4C124600E4F492 /* Data.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Data.cpp; sourceTree = "<group>"; };
-		B38581D71E4C124600E4F492 /* Data.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Data.hpp; sourceTree = "<group>"; };
+		B38581DB1E4C4B5700E4F492 /* Data.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Data.cpp; sourceTree = "<group>"; };
+		B38581DC1E4C4B5700E4F492 /* Data.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Data.hpp; sourceTree = "<group>"; };
+		B38581DE1E4C4B5700E4F492 /* File.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = File.cpp; sourceTree = "<group>"; };
+		B38581DF1E4C4B5700E4F492 /* File.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = File.hpp; sourceTree = "<group>"; };
+		B38581E31E4C4B6200E4F492 /* Image.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Image.cpp; sourceTree = "<group>"; };
+		B38581E41E4C4B6200E4F492 /* Image.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Image.hpp; sourceTree = "<group>"; };
 		B39C2FF61DED85ED003A3859 /* VertextShader.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = VertextShader.hpp; sourceTree = "<group>"; };
 		B39C2FF91DED8638003A3859 /* FragmentShader.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = FragmentShader.hpp; sourceTree = "<group>"; };
 		B3A70B961DF50F7E00BC0216 /* Shape.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Shape.cpp; sourceTree = "<group>"; };
@@ -201,15 +204,41 @@
 			path = Program;
 			sourceTree = "<group>";
 		};
-		B38581D21E4C122300E4F492 /* FileIO */ = {
+		B38581D91E4C4B5700E4F492 /* FileIO */ = {
 			isa = PBXGroup;
 			children = (
-				B38581D31E4C122300E4F492 /* File.cpp */,
-				B38581D41E4C122300E4F492 /* File.hpp */,
-				B38581D61E4C124600E4F492 /* Data.cpp */,
-				B38581D71E4C124600E4F492 /* Data.hpp */,
+				B38581DA1E4C4B5700E4F492 /* Data */,
+				B38581DD1E4C4B5700E4F492 /* File */,
+				B38581E01E4C4B5700E4F492 /* Image */,
 			);
 			path = FileIO;
+			sourceTree = "<group>";
+		};
+		B38581DA1E4C4B5700E4F492 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				B38581DB1E4C4B5700E4F492 /* Data.cpp */,
+				B38581DC1E4C4B5700E4F492 /* Data.hpp */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		B38581DD1E4C4B5700E4F492 /* File */ = {
+			isa = PBXGroup;
+			children = (
+				B38581DE1E4C4B5700E4F492 /* File.cpp */,
+				B38581DF1E4C4B5700E4F492 /* File.hpp */,
+			);
+			path = File;
+			sourceTree = "<group>";
+		};
+		B38581E01E4C4B5700E4F492 /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				B38581E31E4C4B6200E4F492 /* Image.cpp */,
+				B38581E41E4C4B6200E4F492 /* Image.hpp */,
+			);
+			path = Image;
 			sourceTree = "<group>";
 		};
 		B3A70B951DF50F7E00BC0216 /* Shape */ = {
@@ -409,7 +438,7 @@
 		B3EE133B1DEC7414009A4A32 /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				B38581D21E4C122300E4F492 /* FileIO */,
+				B38581D91E4C4B5700E4F492 /* FileIO */,
 				B3EE133C1DEC7414009A4A32 /* Collection */,
 				B3EE133F1DEC7414009A4A32 /* Object */,
 				B3EE13421DEC7414009A4A32 /* ReleasePool */,
@@ -590,16 +619,16 @@
 				B3EE13551DED49C6009A4A32 /* Cube.cpp in Sources */,
 				B3EE134C1DEC8340009A4A32 /* Dictionary.cpp in Sources */,
 				B3EE13681DED6A42009A4A32 /* SkyBox.cpp in Sources */,
-				B38581D81E4C124600E4F492 /* Data.cpp in Sources */,
 				B3718A8A1DF5418A000CD5B9 /* SimpleScene.cpp in Sources */,
 				B3EE12621DEC1BE4009A4A32 /* ViewController.m in Sources */,
 				B3EE13581DED503B009A4A32 /* GLESMesh.cpp in Sources */,
 				B3EE130B1DEC59BE009A4A32 /* XYZGameEngineView.mm in Sources */,
 				B3EE125F1DEC1BE4009A4A32 /* AppDelegate.m in Sources */,
 				B3EE13451DEC7414009A4A32 /* Object.cpp in Sources */,
+				B38581E51E4C4B6200E4F492 /* Image.cpp in Sources */,
 				B3EE132A1DEC64F8009A4A32 /* Frame.cpp in Sources */,
 				B3EE13651DED5F3C009A4A32 /* GLESMatrix.cpp in Sources */,
-				B38581D51E4C122300E4F492 /* File.cpp in Sources */,
+				B38581E21E4C4B5700E4F492 /* File.cpp in Sources */,
 				B3718A8E1DF543BE000CD5B9 /* Program.cpp in Sources */,
 				B3A70B991DF50F7E00BC0216 /* Shape.cpp in Sources */,
 				B3EE13461DEC7414009A4A32 /* ReleasePool.cpp in Sources */,
@@ -612,6 +641,7 @@
 				B3EE13111DEC5C36009A4A32 /* GLESBuffer.cpp in Sources */,
 				B301C6C61E48157C00039C69 /* Texture.cpp in Sources */,
 				B3718A791DF53B05000CD5B9 /* Transform.cpp in Sources */,
+				B38581E11E4C4B5700E4F492 /* Data.cpp in Sources */,
 				B3EE13371DEC7172009A4A32 /* Mesh.cpp in Sources */,
 				B3EE133A1DEC7183009A4A32 /* Conponent.cpp in Sources */,
 				B3EE13621DED5AFF009A4A32 /* GLESMath.cpp in Sources */,

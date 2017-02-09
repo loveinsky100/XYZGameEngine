@@ -8,6 +8,7 @@
 
 #include "Scene.hpp"
 #include <sys/time.h>
+#include "Frame.hpp"
 
 using namespace XYZGame;
 
@@ -74,6 +75,8 @@ void Scene::draw()
 void Scene::clear()
 {
     GLESMesh::clear();
+    GLESMesh::viewPort(Frame::sharedFrame()->currentSize().width,
+                       Frame::sharedFrame()->currentSize().height);
 }
 
 /**

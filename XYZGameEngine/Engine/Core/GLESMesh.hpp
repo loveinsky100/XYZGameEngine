@@ -53,6 +53,7 @@ namespace XYZGame
         void draw();
         
         static void clear();
+        static void viewPort(GLfloat width, GLfloat height);
         
     protected:
         virtual void dealloc();

@@ -57,6 +57,5 @@ void ReleasePool::addAutoRelease(Object *object)
 
 void ReleasePool::addDestroy(Object *object)
 {
-    Locker l(lock);
     destoryObjects.push_back(object);
 }

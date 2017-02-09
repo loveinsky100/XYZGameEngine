@@ -76,39 +76,32 @@ string File::getPath(FilePathType type)
 
 Data *File::read(string file, FilePathType type)
 {
-    Data *data = Data::create();
     string path = File::getPath(type) + file;
     FILE *pFile;
     long lSize;
-    char *buffer;
     size_t result;
     
     pFile = fopen (path.c_str(), "rb");
     if (pFile == NULL)
     {
-        return data;
+        return NULL;
     }
     
     fseek (pFile , 0 , SEEK_END);
     lSize = ftell (pFile);
+    
+    Data *data = Data::createWithSize(lSize);
+    
     rewind (pFile);
     
-    buffer = (char *)malloc(sizeof(char) * lSize);
-    if(buffer == NULL)
-    {
-        return data;
-    }
-    
-    result = fread (buffer,1,lSize,pFile);
+    result = fread (data->getBytes(), 1, lSize, pFile);
     if (result != lSize)
     {
         return data;
     }
 
     fclose (pFile);
-    data->setBytes(buffer);
     
-//    free (buffer); // 此处在data里进行释放
     return data;
 }
 

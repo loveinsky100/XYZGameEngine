@@ -46,6 +46,9 @@ object -> autorelease(); \
 \
 return object; \
 } \
+ObjectMRC(ObjectClass)
+
+#define ObjectMRC(ObjectClass) \
 ObjectClass *autorelease() \
 { \
 this->_autorelease(); \
@@ -58,12 +61,13 @@ return this; \
 } \
 template<typename T> bool isKindOfClass() \
 { \
-    return TIsDerived<ObjectClass, T>::Result; \
+return TIsDerived<ObjectClass, T>::Result; \
 } \
 template<typename T> static bool isSubOfClass() \
 { \
 return TIsDerived<ObjectClass, T>::Result; \
 }
+    
     
     
 #define Release(ptr) \
@@ -80,7 +84,7 @@ void set##Name(Type name) \
 { \
 this->name = name; \
 }
-    
+
 #define PropertyGetter(Type, name, Name) \
 Type get##Name() \
 { \

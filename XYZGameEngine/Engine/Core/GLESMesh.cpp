@@ -76,9 +76,9 @@ void GLESMesh::clear()
     glClearColor(0, 0, 0, 0);
     glClear(GL_COLOR_BUFFER_BIT | GL_STENCIL_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     glEnable(GL_CULL_FACE);
-    
-    int width, height;
-    glGetRenderbufferParameteriv(GL_RENDERBUFFER, GL_RENDERBUFFER_WIDTH, &width);
-    glGetRenderbufferParameteriv(GL_RENDERBUFFER, GL_RENDERBUFFER_HEIGHT, &height);
+}
+
+void GLESMesh:: viewPort(GLfloat width, GLfloat height)
+{
     glViewport(0, 0, width, height);
 }

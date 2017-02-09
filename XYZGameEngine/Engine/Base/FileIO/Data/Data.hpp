@@ -16,10 +16,13 @@ namespace XYZGame
 {
     class Data : public Object
     {
-        AssignProperty(char *, bytes, Bytes)
+        AssignReadOnlyProperty(char *, bytes, Bytes)
+        AssignReadOnlyProperty(long, length, Length)
         
     public:
-        CreateInit(Data);
+        static Data *createWithSize(long size);
+        virtual bool init();
+        ObjectMRC(Data)
         
     protected:
         virtual void dealloc();
