@@ -8,18 +8,24 @@
 
 #include "GLESProgram.hpp"
 #include <stdlib.h>
+#include "Number.hpp"
+#include "String.hpp"
 
 using namespace XYZGame;
 
 bool GLESProgram::init()
 {
     Object::init();
+    this->setAttributeDictionary(Dictionary::create());
+    this->setUniformDictionary(Dictionary::create());
     return true;
 }
 
 void GLESProgram::dealloc()
 {
     Object::dealloc();
+    Release(this->attributeDictionary);
+    Release(this->uniformDictionary);
     glDeleteShader(this->vertexShaderId);
     glDeleteShader(this->fragmentShaderId);
     glDeleteProgram(this->programId);
@@ -112,10 +118,30 @@ void GLESProgram::use()
 
 GLuint GLESProgram::attributeIndex(string attributeName)
 {
-    return glGetAttribLocation(this->programId, attributeName.c_str());
+    String *key = String::create(attributeName);
+    Number<GLuint> *attribute = (Number<GLuint> *)this->getAttributeDictionary()->get(key);
+    if(attribute == nullptr)
+    {
+        GLuint id = glGetAttribLocation(this->programId, attributeName.c_str());
+        attribute = Number<GLuint>::create(id);
+        this->getAttributeDictionary()->set(key, attribute);
+        return id;
+    }
+    
+    return attribute->getValue();
 }
 
 GLuint GLESProgram::uniformIndex(string uniformName)
 {
-    return glGetUniformLocation(this->programId, uniformName.c_str());
+    String *key = String::create(uniformName);
+    Number<GLuint> *uniform = (Number<GLuint> *)this->getUniformDictionary()->get(key);
+    if(uniform == nullptr)
+    {
+        GLuint id = glGetUniformLocation(this->programId, uniformName.c_str());
+        uniform = Number<GLuint>::create(id);
+        this->getAttributeDictionary()->set(key, uniform);
+        return id;
+    }
+    
+    return uniform->getValue();
 }

@@ -12,20 +12,27 @@
 #include <stdio.h>
 #include "Object.hpp"
 #include <string>
+#include "HashTable.hpp"
 
 using namespace std;
 
 namespace XYZGame
 {
-    typedef struct _DictionaryNode
-    {
-        Object *data;
-        _DictionaryNode *next;
-    }DictionaryNode;
-    
     class Dictionary : public Object
     {
+        RetainProtectedProperty(HashTable *, hashTable, HashTable)
         
+    public:
+        CreateInit(Dictionary);
+        
+        void set(Object *key, Object *value);
+        Object *get(Object *key);
+        void remove(Object *key);
+        void removeAll();
+        int count();
+        
+    protected:
+        virtual void dealloc();
     };
 }
 

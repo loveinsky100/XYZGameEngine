@@ -63,3 +63,8 @@ int Object::getRetainCount()
     Locker l(lock);
     return this->retainCount;
 }
+
+long Object::hashCode()
+{
+    return (long)this;
+}

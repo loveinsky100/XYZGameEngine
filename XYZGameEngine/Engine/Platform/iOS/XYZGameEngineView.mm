@@ -55,7 +55,7 @@ using namespace XYZGame;
                                                        selector:@selector(update)];
         
 #if TARGET_IPHONE_SIMULATOR
-        self.displayLink.frameInterval = 2;
+        self.displayLink.frameInterval = 1;
 #elif TARGET_OS_IPHONE
         self.displayLink.frameInterval = 1;
 #endif
@@ -74,7 +74,7 @@ using namespace XYZGame;
 - (void)setupContext
 {
     self.context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2];
-    [self.context setMultiThreaded:YES];
+//    [self.context setMultiThreaded:YES];
 }
 
 - (void)useContext

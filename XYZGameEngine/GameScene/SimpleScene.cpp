@@ -21,7 +21,8 @@ bool SimpleScene::init()
     // FileTest
     Data *data = File::read("Info.plist", FilePathType_Bundle);
 
-    printf("%s", data->getBytes());
+    printf("%s \n", data->getBytes());
+    printf("\n %ld \n\n", data->hashCode());
     return true;
 }
 

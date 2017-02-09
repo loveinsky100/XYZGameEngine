@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		B301C6C61E48157C00039C69 /* Texture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B301C6C41E48157C00039C69 /* Texture.cpp */; };
+		B36B1DC41E4C530C006FFE86 /* String.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B36B1DC21E4C530C006FFE86 /* String.cpp */; };
+		B36B1DC81E4C5E49006FFE86 /* HashTable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B36B1DC61E4C5E49006FFE86 /* HashTable.cpp */; };
+		B36B1DCB1E4C60FD006FFE86 /* HashNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B36B1DC91E4C60FD006FFE86 /* HashNode.cpp */; };
+		B36B1DCD1E4C68EA006FFE86 /* DictionaryTest.mm in Sources */ = {isa = PBXBuildFile; fileRef = B36B1DCC1E4C68EA006FFE86 /* DictionaryTest.mm */; };
 		B3718A751DF51789000CD5B9 /* KindOfClassTest.mm in Sources */ = {isa = PBXBuildFile; fileRef = B3718A741DF51789000CD5B9 /* KindOfClassTest.mm */; };
 		B3718A791DF53B05000CD5B9 /* Transform.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3718A771DF53B05000CD5B9 /* Transform.cpp */; };
 		B3718A861DF54164000CD5B9 /* XYZGameDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3718A841DF54164000CD5B9 /* XYZGameDelegate.cpp */; };
@@ -43,6 +47,7 @@
 		B3EE13621DED5AFF009A4A32 /* GLESMath.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3EE13611DED5AFF009A4A32 /* GLESMath.cpp */; };
 		B3EE13651DED5F3C009A4A32 /* GLESMatrix.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3EE13631DED5F3C009A4A32 /* GLESMatrix.cpp */; };
 		B3EE13681DED6A42009A4A32 /* SkyBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3EE13661DED6A42009A4A32 /* SkyBox.cpp */; };
+		B3F832181E4C6FE300E55124 /* Number.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3F832161E4C6FE300E55124 /* Number.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +63,13 @@
 /* Begin PBXFileReference section */
 		B301C6C41E48157C00039C69 /* Texture.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Texture.cpp; sourceTree = "<group>"; };
 		B301C6C51E48157C00039C69 /* Texture.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Texture.hpp; sourceTree = "<group>"; };
+		B36B1DC21E4C530C006FFE86 /* String.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = String.cpp; sourceTree = "<group>"; };
+		B36B1DC31E4C530C006FFE86 /* String.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = String.hpp; sourceTree = "<group>"; };
+		B36B1DC61E4C5E49006FFE86 /* HashTable.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HashTable.cpp; sourceTree = "<group>"; };
+		B36B1DC71E4C5E49006FFE86 /* HashTable.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = HashTable.hpp; sourceTree = "<group>"; };
+		B36B1DC91E4C60FD006FFE86 /* HashNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HashNode.cpp; sourceTree = "<group>"; };
+		B36B1DCA1E4C60FD006FFE86 /* HashNode.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = HashNode.hpp; sourceTree = "<group>"; };
+		B36B1DCC1E4C68EA006FFE86 /* DictionaryTest.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = DictionaryTest.mm; sourceTree = "<group>"; };
 		B3718A741DF51789000CD5B9 /* KindOfClassTest.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = KindOfClassTest.mm; sourceTree = "<group>"; };
 		B3718A771DF53B05000CD5B9 /* Transform.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Transform.cpp; sourceTree = "<group>"; };
 		B3718A781DF53B05000CD5B9 /* Transform.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Transform.hpp; sourceTree = "<group>"; };
@@ -131,6 +143,8 @@
 		B3EE13641DED5F3C009A4A32 /* GLESMatrix.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = GLESMatrix.hpp; sourceTree = "<group>"; };
 		B3EE13661DED6A42009A4A32 /* SkyBox.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SkyBox.cpp; sourceTree = "<group>"; };
 		B3EE13671DED6A42009A4A32 /* SkyBox.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = SkyBox.hpp; sourceTree = "<group>"; };
+		B3F832161E4C6FE300E55124 /* Number.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Number.cpp; sourceTree = "<group>"; };
+		B3F832171E4C6FE300E55124 /* Number.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Number.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +172,27 @@
 				B301C6C51E48157C00039C69 /* Texture.hpp */,
 			);
 			path = Texture;
+			sourceTree = "<group>";
+		};
+		B36B1DC11E4C5304006FFE86 /* String */ = {
+			isa = PBXGroup;
+			children = (
+				B36B1DC21E4C530C006FFE86 /* String.cpp */,
+				B36B1DC31E4C530C006FFE86 /* String.hpp */,
+			);
+			path = String;
+			sourceTree = "<group>";
+		};
+		B36B1DC51E4C5E3F006FFE86 /* HashTable */ = {
+			isa = PBXGroup;
+			children = (
+				B36B1DC61E4C5E49006FFE86 /* HashTable.cpp */,
+				B36B1DC71E4C5E49006FFE86 /* HashTable.hpp */,
+				B36B1DC91E4C60FD006FFE86 /* HashNode.cpp */,
+				B36B1DCA1E4C60FD006FFE86 /* HashNode.hpp */,
+			);
+			name = HashTable;
+			path = Collection/HashTable;
 			sourceTree = "<group>";
 		};
 		B3718A761DF53AEA000CD5B9 /* Transform */ = {
@@ -438,6 +473,8 @@
 		B3EE133B1DEC7414009A4A32 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				B3F832151E4C6FD800E55124 /* Number */,
+				B36B1DC51E4C5E3F006FFE86 /* HashTable */,
 				B38581D91E4C4B5700E4F492 /* FileIO */,
 				B3EE133C1DEC7414009A4A32 /* Collection */,
 				B3EE133F1DEC7414009A4A32 /* Object */,
@@ -449,6 +486,7 @@
 		B3EE133C1DEC7414009A4A32 /* Collection */ = {
 			isa = PBXGroup;
 			children = (
+				B36B1DC11E4C5304006FFE86 /* String */,
 				B3EE133D1DEC7414009A4A32 /* Array */,
 				B3EE133E1DEC7414009A4A32 /* Dictionary */,
 			);
@@ -499,6 +537,7 @@
 				B3EE13501DED24CB009A4A32 /* TestObject.cpp */,
 				B3EE13511DED24CB009A4A32 /* TestObject.hpp */,
 				B3718A741DF51789000CD5B9 /* KindOfClassTest.mm */,
+				B36B1DCC1E4C68EA006FFE86 /* DictionaryTest.mm */,
 			);
 			path = UnitTest;
 			sourceTree = "<group>";
@@ -510,6 +549,16 @@
 				B3EE13611DED5AFF009A4A32 /* GLESMath.cpp */,
 			);
 			path = Math;
+			sourceTree = "<group>";
+		};
+		B3F832151E4C6FD800E55124 /* Number */ = {
+			isa = PBXGroup;
+			children = (
+				B3F832161E4C6FE300E55124 /* Number.cpp */,
+				B3F832171E4C6FE300E55124 /* Number.hpp */,
+			);
+			name = Number;
+			path = Collection/Number;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -626,8 +675,11 @@
 				B3EE125F1DEC1BE4009A4A32 /* AppDelegate.m in Sources */,
 				B3EE13451DEC7414009A4A32 /* Object.cpp in Sources */,
 				B38581E51E4C4B6200E4F492 /* Image.cpp in Sources */,
+				B36B1DC81E4C5E49006FFE86 /* HashTable.cpp in Sources */,
+				B36B1DC41E4C530C006FFE86 /* String.cpp in Sources */,
 				B3EE132A1DEC64F8009A4A32 /* Frame.cpp in Sources */,
 				B3EE13651DED5F3C009A4A32 /* GLESMatrix.cpp in Sources */,
+				B3F832181E4C6FE300E55124 /* Number.cpp in Sources */,
 				B38581E21E4C4B5700E4F492 /* File.cpp in Sources */,
 				B3718A8E1DF543BE000CD5B9 /* Program.cpp in Sources */,
 				B3A70B991DF50F7E00BC0216 /* Shape.cpp in Sources */,
@@ -646,6 +698,7 @@
 				B3EE133A1DEC7183009A4A32 /* Conponent.cpp in Sources */,
 				B3EE13621DED5AFF009A4A32 /* GLESMath.cpp in Sources */,
 				B3EE12881DEC1F45009A4A32 /* GLESProgram.cpp in Sources */,
+				B36B1DCB1E4C60FD006FFE86 /* HashNode.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -654,6 +707,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3EE12751DEC1BE4009A4A32 /* XYZGameEngineTests.m in Sources */,
+				B36B1DCD1E4C68EA006FFE86 /* DictionaryTest.mm in Sources */,
 				B3EE134F1DED1AF8009A4A32 /* ArrayTest.mm in Sources */,
 				B3718A751DF51789000CD5B9 /* KindOfClassTest.mm in Sources */,
 			);

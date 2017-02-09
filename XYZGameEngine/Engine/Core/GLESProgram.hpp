@@ -13,6 +13,7 @@
 #include <OpenGLES/ES2/gl.h>
 #include "GLESShader.hpp"
 #include "Object.hpp"
+#include "Dictionary.hpp"
 
 using namespace std;
 
@@ -20,12 +21,15 @@ namespace XYZGame
 {
     class GLESProgram : public Object
     {
-    private:
-        GLuint programId;
-        GLuint vertexShaderId;
-        GLuint fragmentShaderId;
+        AssignProtectedProperty(GLuint, programId, ProgramId)
+        AssignProtectedProperty(GLuint, vertexShaderId, VertexShaderId)
+        AssignProtectedProperty(GLuint, fragmentShaderId, FragmentShaderId)
+        RetainProtectedProperty(Dictionary *, attributeDictionary, AttributeDictionary);
+        RetainProtectedProperty(Dictionary *, uniformDictionary, UniformDictionary);
         
+    private:
         GLuint loadShader(string shader, GLenum shaderType);
+        
     public:
         
         CreateInit(GLESProgram);

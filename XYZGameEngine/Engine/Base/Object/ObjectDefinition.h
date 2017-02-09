@@ -126,7 +126,10 @@ void set##Name(Type name) \
 { \
 Release(this->name); \
 this->name = name; \
-this->name->retain(); \
+if(name != nullptr) \
+{ \
+    this->name->retain(); \
+} \
 }
     
 #define RetainProperty(Type, name, Name) \

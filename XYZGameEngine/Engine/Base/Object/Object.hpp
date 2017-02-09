@@ -39,6 +39,8 @@ namespace XYZGame
         
         void release();
         int getRetainCount();
+        
+        virtual long hashCode();
     };
 }
 
