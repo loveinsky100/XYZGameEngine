@@ -24,6 +24,8 @@ bool Scene::init()
     if(Object::init())
     {
         this->setShape(Shape::create());
+        this->setFrameTime(0);
+        this->setFrameCount(0);
         return true;
     }
     
@@ -55,16 +57,21 @@ void Scene::draw()
         this->drawTime = tv.tv_sec * 1000 + tv.tv_usec / 1000;
     }
     
-    this->clear();
-    
     struct timeval tv;
     gettimeofday(&tv, NULL);
     long now = tv.tv_sec * 1000 + tv.tv_usec / 1000;
-    currentScene->update(now - this->drawTime);
-  
-    if(currentScene->getShape() != nullptr)
+    long offsetTime = now - this->drawTime;
+    
+    currentScene->update(offsetTime);
+    
+    if(!this->isLoseFrame(offsetTime))
     {
-        currentScene->getShape()->draw();
+        // 掉帧的话就不更新视图了
+        if(currentScene->getShape() != nullptr)
+        {
+            this->clear();
+            currentScene->getShape()->draw();
+        }
     }
     
     struct timeval tv2;
@@ -87,4 +94,30 @@ void Scene::clear()
 void Scene::update(long deltaTime)
 {
     
+}
+
+bool Scene::isLoseFrame(long frameTime)
+{
+    // 根据当前的frameTime判断是否存在掉帧的情况，如果掉帧了，需要跳过此次
+    this->frameCount ++;
+    this->frameTime += frameTime;
+    
+    // 每隔60桢重新计算平均帧率
+    if(this->frameCount > 60)
+    {
+        this->frameTime = this->frameCount / this->frameCount;
+        this->frameCount = 1;
+    }
+    
+    long average = this->frameTime / this->frameCount;
+    
+    if((float)average / (float)frameTime > 1.5)
+    {
+        // 掉帧了
+        return true;
+    }
+    else
+    {
+        return false;
+    }
 }

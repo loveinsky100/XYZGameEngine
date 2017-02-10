@@ -18,9 +18,6 @@ using namespace XYZGame;
 @interface XYZGameEngineView()
 @property (nonatomic, strong) CADisplayLink *displayLink;
 @property (nonatomic, strong) EAGLContext *context;
-@property (nonatomic, assign) GLuint renderBuffer;
-@property (nonatomic, assign) GLuint frameBuffer;
-
 @end
 
 @implementation XYZGameEngineView
@@ -53,19 +50,13 @@ using namespace XYZGame;
         
         self.displayLink = [CADisplayLink displayLinkWithTarget:self
                                                        selector:@selector(update)];
-        
-#if TARGET_IPHONE_SIMULATOR
-        self.displayLink.frameInterval = 1;
-#elif TARGET_OS_IPHONE
-        self.displayLink.frameInterval = 1;
-#endif
-        
+
         buffer = GLESBuffer::create()->retain();
         delegate = new XYZGameDelegate();
         delegate->gameViewDidLoad(Frame::sharedFrame());
         
         [self.displayLink addToRunLoop:[NSRunLoop mainRunLoop]
-                               forMode:NSRunLoopCommonModes];
+                               forMode:NSDefaultRunLoopMode];
     }
     
     return self;
@@ -74,7 +65,7 @@ using namespace XYZGame;
 - (void)setupContext
 {
     self.context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2];
-//    [self.context setMultiThreaded:YES];
+    [self.context setMultiThreaded:YES];
 }
 
 - (void)useContext
