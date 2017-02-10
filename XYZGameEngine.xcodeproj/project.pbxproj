@@ -48,6 +48,9 @@
 		B3EE13651DED5F3C009A4A32 /* GLESMatrix.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3EE13631DED5F3C009A4A32 /* GLESMatrix.cpp */; };
 		B3EE13681DED6A42009A4A32 /* SkyBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3EE13661DED6A42009A4A32 /* SkyBox.cpp */; };
 		B3F832181E4C6FE300E55124 /* Number.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3F832161E4C6FE300E55124 /* Number.cpp */; };
+		B3F832641E4DA2A400E55124 /* libjpeg.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B3F832551E4DA2A400E55124 /* libjpeg.a */; };
+		B3F832651E4DA2A400E55124 /* libpng.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B3F8325C1E4DA2A400E55124 /* libpng.a */; };
+		B3F832661E4DA2A400E55124 /* libwebp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B3F832631E4DA2A400E55124 /* libwebp.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -145,6 +148,19 @@
 		B3EE13671DED6A42009A4A32 /* SkyBox.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = SkyBox.hpp; sourceTree = "<group>"; };
 		B3F832161E4C6FE300E55124 /* Number.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Number.cpp; sourceTree = "<group>"; };
 		B3F832171E4C6FE300E55124 /* Number.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Number.hpp; sourceTree = "<group>"; };
+		B3F832501E4DA2A400E55124 /* jconfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jconfig.h; sourceTree = "<group>"; };
+		B3F832511E4DA2A400E55124 /* jerror.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jerror.h; sourceTree = "<group>"; };
+		B3F832521E4DA2A400E55124 /* jmorecfg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jmorecfg.h; sourceTree = "<group>"; };
+		B3F832531E4DA2A400E55124 /* jpeglib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jpeglib.h; sourceTree = "<group>"; };
+		B3F832551E4DA2A400E55124 /* libjpeg.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libjpeg.a; sourceTree = "<group>"; };
+		B3F832581E4DA2A400E55124 /* png.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = png.h; sourceTree = "<group>"; };
+		B3F832591E4DA2A400E55124 /* pngconf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pngconf.h; sourceTree = "<group>"; };
+		B3F8325A1E4DA2A400E55124 /* pnglibconf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pnglibconf.h; sourceTree = "<group>"; };
+		B3F8325C1E4DA2A400E55124 /* libpng.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libpng.a; sourceTree = "<group>"; };
+		B3F8325F1E4DA2A400E55124 /* decode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = decode.h; sourceTree = "<group>"; };
+		B3F832601E4DA2A400E55124 /* encode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = encode.h; sourceTree = "<group>"; };
+		B3F832611E4DA2A400E55124 /* types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = types.h; sourceTree = "<group>"; };
+		B3F832631E4DA2A400E55124 /* libwebp.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libwebp.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +168,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3F832641E4DA2A400E55124 /* libjpeg.a in Frameworks */,
+				B3F832651E4DA2A400E55124 /* libpng.a in Frameworks */,
+				B3F832661E4DA2A400E55124 /* libwebp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,6 +289,9 @@
 		B38581E01E4C4B5700E4F492 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				B3F8324E1E4DA2A400E55124 /* JPEG */,
+				B3F832561E4DA2A400E55124 /* PNG */,
+				B3F8325D1E4DA2A400E55124 /* WEBP */,
 				B38581E31E4C4B6200E4F492 /* Image.cpp */,
 				B38581E41E4C4B6200E4F492 /* Image.hpp */,
 			);
@@ -561,6 +583,88 @@
 			path = Collection/Number;
 			sourceTree = "<group>";
 		};
+		B3F8324E1E4DA2A400E55124 /* JPEG */ = {
+			isa = PBXGroup;
+			children = (
+				B3F8324F1E4DA2A400E55124 /* include */,
+				B3F832541E4DA2A400E55124 /* lib */,
+			);
+			path = JPEG;
+			sourceTree = "<group>";
+		};
+		B3F8324F1E4DA2A400E55124 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				B3F832501E4DA2A400E55124 /* jconfig.h */,
+				B3F832511E4DA2A400E55124 /* jerror.h */,
+				B3F832521E4DA2A400E55124 /* jmorecfg.h */,
+				B3F832531E4DA2A400E55124 /* jpeglib.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		B3F832541E4DA2A400E55124 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				B3F832551E4DA2A400E55124 /* libjpeg.a */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
+		B3F832561E4DA2A400E55124 /* PNG */ = {
+			isa = PBXGroup;
+			children = (
+				B3F832571E4DA2A400E55124 /* include */,
+				B3F8325B1E4DA2A400E55124 /* lib */,
+			);
+			path = PNG;
+			sourceTree = "<group>";
+		};
+		B3F832571E4DA2A400E55124 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				B3F832581E4DA2A400E55124 /* png.h */,
+				B3F832591E4DA2A400E55124 /* pngconf.h */,
+				B3F8325A1E4DA2A400E55124 /* pnglibconf.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		B3F8325B1E4DA2A400E55124 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				B3F8325C1E4DA2A400E55124 /* libpng.a */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
+		B3F8325D1E4DA2A400E55124 /* WEBP */ = {
+			isa = PBXGroup;
+			children = (
+				B3F8325E1E4DA2A400E55124 /* include */,
+				B3F832621E4DA2A400E55124 /* lib */,
+			);
+			path = WEBP;
+			sourceTree = "<group>";
+		};
+		B3F8325E1E4DA2A400E55124 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				B3F8325F1E4DA2A400E55124 /* decode.h */,
+				B3F832601E4DA2A400E55124 /* encode.h */,
+				B3F832611E4DA2A400E55124 /* types.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		B3F832621E4DA2A400E55124 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				B3F832631E4DA2A400E55124 /* libwebp.a */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -843,6 +947,12 @@
 				INFOPLIST_FILE = XYZGameEngine/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/XYZGameEngine/Engine/Base/FileIO/Image/JPEG/lib",
+					"$(PROJECT_DIR)/XYZGameEngine/Engine/Base/FileIO/Image/PNG/lib",
+					"$(PROJECT_DIR)/XYZGameEngine/Engine/Base/FileIO/Image/WEBP/lib",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = cocos.demo.xyz.XYZGameEngine;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -858,6 +968,12 @@
 				INFOPLIST_FILE = XYZGameEngine/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/XYZGameEngine/Engine/Base/FileIO/Image/JPEG/lib",
+					"$(PROJECT_DIR)/XYZGameEngine/Engine/Base/FileIO/Image/PNG/lib",
+					"$(PROJECT_DIR)/XYZGameEngine/Engine/Base/FileIO/Image/WEBP/lib",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = cocos.demo.xyz.XYZGameEngine;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

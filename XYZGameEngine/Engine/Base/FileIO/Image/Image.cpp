@@ -7,6 +7,8 @@
 //
 
 #include "Image.hpp"
+#include "File.hpp"
+#include "png.h"
 
 using namespace XYZGame;
 
@@ -22,7 +24,7 @@ void Image::dealloc()
 
 Image *Image::create(string file)
 {
-    return nullptr;
+    return Image::create(File::read(file, FilePathType_Bundle));
 }
 
 Image *Image::create(Data *data)
